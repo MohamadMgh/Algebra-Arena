@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#e4e9ff">
+<title>میدان دوز عملیات جبری | باشگاه ریاضی با مقدم</title>
+<style>
+:root{--bg:#080d1c;--panel:#111a30;--line:#293550;--ink:#f2f6ff;--muted:#b0bdd6;--cyan:#57e6f9;--pink:#ff79c7;--gold:#ffdc83;--green:#8af3c0;--red:#ff9baf;--radius:22px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.8;min-height:100svh;background-image:radial-gradient(ellipse at 15% 0%,#14364b80,transparent 45%),radial-gradient(ellipse at 95% 30%,#45234360,transparent 42%)}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(#88baff05 1px,transparent 1px),linear-gradient(90deg,#88baff05 1px,transparent 1px);background-size:38px 38px}button,input,select{font:inherit}button,a,input,select{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{cursor:default;opacity:.5}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:4px}a{color:var(--cyan);text-decoration:none}a:hover{text-decoration:underline}h1,h2,h3,p{margin-top:0}button{touch-action:manipulation}button,input,select{min-height:48px}button{border:1px solid var(--line);border-radius:14px;background:#1a263e;color:var(--ink);padding:10px 16px;transition:background .16s,transform .16s}button:not(:disabled):active{transform:scale(.98)}button:not(:disabled):hover{background:#273956}.primary{background:var(--cyan);color:#06141c;border-color:var(--cyan);font-weight:bold;box-shadow:0 5px 26px #57e6f91a}.primary:not(:disabled):hover{background:#a2f4ff}.secondary{background:#ff79c713;border-color:#ff79c75c;color:var(--pink)}.quiet{background:transparent}.small{font-size:.8rem;padding:8px 12px;min-height:44px}.danger{color:var(--red)}
+.review-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;list-style:none;padding:0;margin:10px 0 18px}.review-options li{min-width:0;padding:10px;border:1px solid #70edff40;border-radius:10px;overflow-wrap:anywhere}.review-option-label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:4px}.review-question{margin-bottom:18px}
+.shell{max-width:1060px;margin:auto;padding:22px 22px 0}.topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:24px}.brand{display:flex;align-items:center;gap:12px}.logo{display:grid;place-items:center;direction:ltr;width:48px;height:48px;border:1px solid #57e6f950;border-radius:15px;background:#57e6f910;color:var(--cyan);font-size:25px;font-weight:900;box-shadow:inset 0 0 18px #57e6f912}.brand strong{display:block;line-height:1.4}.eyebrow{color:var(--cyan);font-size:.73rem;letter-spacing:2px;font-family:Arial,sans-serif}.tools{display:flex;gap:8px}.muted{color:var(--muted)}.panel{background:linear-gradient(140deg,#152138ed,#0e1628f5);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:0 18px 60px #0002}.hero{display:grid;grid-template-columns:1fr 1.05fr;gap:26px;align-items:center}.hero-copy h1{font-size:clamp(2.6rem,6vw,4.5rem);line-height:1.3;letter-spacing:-2px;margin:14px 0}.hero-copy h1 span{color:var(--cyan);text-shadow:0 0 40px #57e6f947}.intro{font-size:1rem;color:var(--muted);max-width:420px}.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid #57e6f930;border-radius:30px;padding:5px 12px;color:var(--cyan);font-size:.78rem;background:#57e6f909}.dot{width:7px;height:7px;border-radius:100%;background:var(--green);box-shadow:0 0 10px var(--green)}.preview{display:flex;gap:10px;direction:ltr;margin:26px 0 22px;align-items:center}.mini-cell{width:54px;height:54px;display:grid;place-items:center;background:#111c32;border:1px solid var(--line);border-radius:13px;font-size:27px;color:var(--cyan)}.mini-cell:nth-child(2){color:var(--pink)}.mini-cell.lit{border-color:#57e6f970;box-shadow:0 0 18px #57e6f917}.pill-row{display:flex;flex-wrap:wrap;gap:7px}.pill{font-size:.76rem;color:var(--muted);padding:5px 10px;border:1px solid var(--line);border-radius:9px}.form-title{font-size:1.18rem;margin-bottom:4px}.subtitle{font-size:.83rem;color:var(--muted)}label{display:block;font-size:.86rem;margin-bottom:7px}input,select{width:100%;border:1px solid #344361;background:#080f21;color:var(--ink);border-radius:12px;padding:10px 12px}input::placeholder{color:#8292b0}select{cursor:pointer}.field{margin-bottom:16px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}.mode{font-size:.87rem;padding:14px 8px}.mode.active{border-color:var(--cyan);background:#57e6f911;color:var(--cyan)}.check{display:flex;align-items:center;gap:9px;font-size:.83rem;color:var(--muted)}.check input{width:20px;height:20px;min-height:20px;accent-color:var(--cyan)}.wide{width:100%}.error{color:var(--red);font-size:.85rem;min-height:1em;margin:8px 0}.source-note{font-size:.75rem;color:var(--muted);margin:15px 0 0}.credits{margin:26px 0 0;padding:19px 8px 21px;border-top:1px solid var(--line);font-size:.78rem;text-align:center;line-height:2.1;color:var(--muted)}.credits a{display:inline-block;min-height:30px}.credits span{white-space:nowrap}.credits .designer{color:#d3dcef}.hidden,[hidden]{display:none!important}
+.game-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.game-heading h1{font-size:1.3rem;margin:0}.game-layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(240px,.8fr);gap:20px;align-items:start}.arena{padding:20px}.players{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}.player{padding:13px 12px;background:#0a1224;border:1px solid var(--line);border-radius:15px;position:relative;min-width:0}.player.active{border-color:var(--cyan);box-shadow:0 0 24px #57e6f90c}.player.o.active{border-color:var(--pink);box-shadow:0 0 24px #ff79c70c}.player-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.88rem;font-weight:bold}.player-symbol{font-size:24px;font-weight:900;line-height:1;margin-left:7px;vertical-align:middle;color:var(--cyan)}.o .player-symbol{color:var(--pink)}.player-meta{font-size:.72rem;color:var(--muted);margin-top:7px}.turn-line{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:13px;font-size:.85rem}.turn-label{color:var(--cyan)}.turn-label.pink{color:var(--pink)}.board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;direction:ltr}.cell{padding:0;aspect-ratio:1;min-height:0;border-radius:14px;background:linear-gradient(145deg,#1d2b45,#111c31);position:relative;font-family:Arial,sans-serif;display:grid;place-items:center;font-weight:800;font-size:clamp(30px,6vw,53px);border-color:#34415d;transition:.2s}.cell:disabled{opacity:1}.cell .level{font-family:Tahoma,sans-serif;font-size:11px;font-weight:normal;color:#8fa1bf;line-height:1.4;display:flex;flex-direction:column;align-items:center;gap:5px}.cell .level i{font-size:14px;font-style:normal;color:#b2c5e7;letter-spacing:2px}.cell[data-tier="3"]{border-color:#725776;background:linear-gradient(145deg,#31213e,#181d34)}.cell.x{color:var(--cyan);background:#57e6f910;border-color:#57e6f95c;text-shadow:0 0 22px #57e6f945}.cell.o{color:var(--pink);background:#ff79c70e;border-color:#ff79c75c;text-shadow:0 0 22px #ff79c745}.cell.last:after{content:"";position:absolute;bottom:6px;width:5px;height:5px;border-radius:50%;background:currentColor}.cell.winner{background:#8af3c025;border-color:var(--green);color:var(--green);animation:glow 1s ease-in-out infinite alternate}.legend{display:flex;justify-content:space-between;gap:8px;margin-top:15px;font-size:.72rem;color:var(--muted)}.side{display:grid;gap:16px}.side .panel{padding:20px}.side h2{font-size:1rem;margin-bottom:12px}.rules{margin:0;padding-right:20px;color:var(--muted);font-size:.84rem}.rules li{margin:9px 0}.rules strong{color:var(--ink)}.status{font-size:.85rem;min-height:52px;margin:0;color:var(--muted);overflow-wrap:anywhere}.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.stat{background:#080f20;border:1px solid var(--line);padding:10px;text-align:center;border-radius:12px}.stat b{display:block;font-size:1.25rem;color:var(--cyan)}.stat small{font-size:.7rem;color:var(--muted)}.math{display:inline-block;direction:ltr;unicode-bidi:isolate;font-family:Arial,sans-serif;letter-spacing:.3px}.activity{font-size:.8rem;color:var(--muted);margin-top:14px;border-top:1px solid var(--line);padding-top:10px}.activity summary{cursor:pointer;color:var(--cyan);padding:6px 0}.activity p{margin-bottom:6px}.session-tag{font-size:.75rem;color:var(--muted)}
+dialog{color:var(--ink);width:min(94vw,560px);max-height:92svh;padding:0;border:1px solid #43516c;border-radius:24px;background:#101a2d;box-shadow:0 30px 120px #000a;overflow:auto;overscroll-behavior:contain}dialog::backdrop{background:#030814da;backdrop-filter:blur(7px)}.dialog-inner{padding:25px}.dialog-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px}.dialog-top h2{font-size:1.1rem;margin:0}.timer{font-family:Arial,sans-serif;font-size:1.05rem;color:var(--gold);white-space:nowrap}.progress{height:4px;background:#273249;border-radius:8px;overflow:hidden;margin-bottom:18px}.progress>div{height:100%;width:100%;background:var(--cyan);transition:width .3s}.question{font-size:1.07rem;line-height:2;margin-bottom:18px}.question .math{font-size:1.15em}.q-visual{margin:10px 0 17px;background:#080f21;border:1px solid var(--line);border-radius:15px;padding:12px;text-align:center}.q-visual svg{width:100%;max-height:120px;display:block}.options{display:grid;grid-template-columns:1fr 1fr;gap:10px}.option{font-size:1.1rem;min-height:60px;padding:12px 7px}.option.correct{border-color:var(--green);background:#8af3c01b;color:var(--green);opacity:1}.option.incorrect{border-color:var(--red);background:#ff9baf19;color:var(--red);opacity:1}.option.eliminated{opacity:.2;text-decoration:line-through}.answer-row{display:flex;gap:10px}.answer-row input{direction:ltr;text-align:center;min-width:0;font-size:1.2rem}.answer-row button{flex-shrink:0}.hint-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:16px;font-size:.76rem;color:var(--muted)}.hint-text{font-size:.85rem;border-right:3px solid var(--gold);background:#ffdc8309;padding:10px 12px;border-radius:8px;margin:14px 0 0;color:var(--gold)}.feedback{padding:15px;margin-top:18px;border:1px solid var(--line);border-radius:15px;font-size:.9rem}.feedback.good{border-color:#8af3c05c;background:#8af3c008}.feedback.bad{border-color:#ff9baf5c;background:#ff9baf08}.feedback h3{font-size:1rem;margin-bottom:8px}.feedback p{margin:0 0 14px}.dialog-credits{margin:20px 0 0;padding:14px 0 0;font-size:.7rem}.result-icon{font-size:3.8rem;color:var(--gold);text-align:center;line-height:1.4}.result-title{text-align:center;font-size:1.65rem;margin:10px 0}.result-message{text-align:center;color:var(--muted);font-size:.88rem}.result-card{padding:14px;border:1px solid var(--line);border-radius:14px;margin:10px 0;font-size:.85rem}.result-card strong{display:block;color:var(--cyan);margin-bottom:6px}.result-card.o strong{color:var(--pink)}.result-actions{display:grid;gap:10px;margin-top:20px}.help-copy{font-size:.9rem;color:var(--muted)}.help-copy h3{font-size:.98rem;color:var(--ink);margin:20px 0 8px}.notice{font-size:.78rem;color:var(--gold);margin:10px 0 0}#audioNotice{font-size:.75rem;color:var(--gold);text-align:center;margin:0 0 10px}noscript{display:block;padding:30px;background:#611b32}.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+@keyframes glow{to{box-shadow:0 0 22px #8af3c035}}@media(min-width:800px){.hero{min-height:640px}.hero-copy{padding:24px 10px}.cell{max-height:105px}}@media(max-width:700px){.shell{padding:14px 14px 0}.topbar{margin-bottom:19px}.brand strong{font-size:.86rem}.eyebrow{font-size:.6rem;letter-spacing:1px}.logo{width:40px;height:40px;font-size:22px}.tools{gap:5px}.tools button{font-size:.75rem;padding:7px 10px}.hero{grid-template-columns:1fr;gap:22px}.hero-copy{text-align:center}.hero-copy h1{font-size:2.8rem;margin:7px 0}.intro{margin:0 auto 16px;font-size:.88rem}.preview{justify-content:center;margin:14px 0}.mini-cell{width:43px;height:43px;font-size:23px}.pill-row{justify-content:center}.panel{padding:20px}.game-layout{grid-template-columns:1fr;gap:15px}.arena{padding:14px}.board{gap:7px}.cell{border-radius:11px}.game-heading{margin-bottom:13px}.game-heading h1{font-size:1.05rem}.players{gap:8px;margin-bottom:13px}.player{padding:11px 9px}.player-name{font-size:.78rem}.player-meta{font-size:.68rem}.turn-line{font-size:.78rem}.side{grid-template-columns:1fr}.side .panel{padding:17px}.dialog-inner{padding:20px}.credits{margin-top:20px}.legend{font-size:.65rem}.question{font-size:1rem}.cell .level{font-size:9px;gap:3px}.cell .level i{font-size:12px}.session-tag{max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.hint-row{align-items:flex-start}}@media(max-width:360px){.shell{padding:10px 10px 0}.row{grid-template-columns:1fr}.board{gap:5px}.arena{padding:10px}.option{font-size:.96rem}.dialog-inner{padding:16px}.brand{gap:7px}.tools button{padding:7px}.cell .level{font-size:8px}.credits{font-size:.68rem}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}} 
+
+/* Neon skyline: lightweight CSS only, no network assets. */
+body{background-color:#060916;background-image:radial-gradient(ellipse at 8% 15%,#086c8344,transparent 52%),radial-gradient(ellipse at 95% 42%,#852c8b44,transparent 48%),linear-gradient(155deg,#060916,#10132c 60%,#071524);background-attachment:fixed;isolation:isolate}
+body:before{z-index:-1;background-image:linear-gradient(#57e6f910 1px,transparent 1px),linear-gradient(90deg,#57e6f910 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(transparent,#000 55%);transform:perspective(650px) rotateX(18deg) scale(1.15);transform-origin:bottom}
+body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(120deg,transparent 25%,#57e6f908 25.2%,transparent 25.5%,transparent 70%,#ff79c70b 70.2%,transparent 70.5%)}
+.audio-controls{display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding:10px 14px;margin-bottom:20px;background:#101a2dcc;border:1px solid var(--line);border-radius:14px;font-size:.8rem}.audio-controls label{margin:0}.audio-controls input[type=range]{width:130px;padding:0;min-height:36px;accent-color:var(--cyan);direction:ltr}.audio-controls output{min-width:3em;color:var(--cyan)}
+.entry-guide{padding:14px;border:1px solid #57e6f950;border-radius:14px;background:#57e6f909;margin-bottom:18px}.entry-guide h3{font-size:.95rem;margin-bottom:8px}.entry-guide p{font-size:.82rem;color:var(--muted);margin-bottom:10px}.entry-guide .check{margin-top:12px}#backQuestionBtn{margin-top:14px}.legend{flex-wrap:wrap}.hero>*{min-width:0}.turn-label{overflow-wrap:anywhere}.math{max-width:100%;overflow-wrap:anywhere}.topbar{flex-wrap:wrap}
+</style>
+<style>
+:root{--p0:#57e6f9;--p1:#ff79c7}
+.cell.x,.cell.o{color:var(--piece);border-color:var(--piece);border-width:3px;background:color-mix(in srgb,var(--piece) 32%,#111c31);box-shadow:inset 0 0 20px color-mix(in srgb,var(--piece) 18%,transparent);text-shadow:0 0 18px var(--piece);-webkit-text-stroke:.5px #ffffff66}
+.cell.x{--piece:var(--p0)}.cell.o{--piece:var(--p1)}
+.player-symbol,.turn-label,.result-card strong{color:var(--p0)}.o .player-symbol,.turn-label.pink,.result-card.o strong{color:var(--p1)}
+.player.active{border-color:var(--p0)}.player.o.active{border-color:var(--p1)}
+.cell.winner{border:3px solid var(--green);box-shadow:0 0 22px var(--green)}
+input[type=color]{padding:4px;cursor:pointer}
+.pattern-steps{display:flex;gap:8px;direction:ltr;align-items:center}.pattern-step{flex:1;min-width:0}.pattern-step small{display:block;color:var(--muted);font-size:.75rem}.q-visual .pattern-step svg{height:90px;max-height:none}
+.board.answer-focus .cell{opacity:.22;filter:saturate(.35)}
+.board.answer-focus .cell.answer-good,.board.answer-focus .cell.answer-bad{opacity:1;filter:none;z-index:2;transform:scale(1.04)}
+.board .cell.answer-good{border:2px solid #b4ffdf;background:#165941;color:#e4fff1;box-shadow:0 0 16px #8af3c0,0 0 38px #8af3c080;text-shadow:0 0 16px #fff}
+.board .cell.answer-bad{border:2px solid #ff687e;background:#7c1935;color:#fff;box-shadow:0 0 18px #ff4269,0 0 36px #ff426960}
+.board .cell.answer-bad .level,.board .cell.answer-bad .level i{color:#fff}
+.answer-toast{position:fixed;z-index:100;top:max(14px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100vw - 24px);padding:14px 20px;border:1px solid var(--green);border-radius:16px;background:#102c29;color:#effff6;box-shadow:0 8px 32px #0009;text-align:center;font-weight:bold;font-size:clamp(.85rem,3.5vw,1.05rem);pointer-events:none}
+.answer-toast.bad{background:#421326;border-color:#ff687e;color:#fff2f5}
+#feedback{scroll-margin-top:85px}#board{scroll-margin-top:90px}
+.cell{border-width:2px}
+.frac{display:inline-flex;vertical-align:middle;flex-direction:column;align-items:stretch;text-align:center;line-height:1.4;margin:.15em .2em;white-space:nowrap}
+.frac .num{border-bottom:1.5px solid currentColor;padding:0 .2em .08em}.frac .den{padding:.08em .2em 0}.math{overflow-wrap:normal}
+#celebrationDialog{text-align:center;border:2px solid var(--gold);background:radial-gradient(ellipse at top,#295a4c,#101a2d 75%);overflow:hidden}
+#celebrationDialog.encourage{background:radial-gradient(ellipse at top,#234c70,#101a2d 75%);border-color:var(--cyan)}
+.flower-garland{font-size:2rem;letter-spacing:8px;margin:16px 0;animation:bloom 1.5s ease-in-out infinite alternate}
+#celebrationDecor{position:absolute;inset:0;pointer-events:none;overflow:hidden}#celebrationDecor span{position:absolute;top:-40px;animation:petal-fall 3.5s linear infinite;font-size:1.5rem}
+.celebration-copy{position:relative;padding:28px 10px}.celebration-copy h2{font-size:1.65rem}.report-text{width:100%;min-height:240px;background:#080f21;color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px;line-height:1.9;font:inherit;white-space:pre-wrap}.report-summary{white-space:pre-line;color:var(--muted);font-size:.85rem}.report-buttons{display:flex;flex-wrap:wrap;gap:8px}.report-buttons button{flex:1;min-width:125px}
+@keyframes petal-fall{to{transform:translate(25px,600px) rotate(240deg)}}@keyframes bloom{to{transform:scale(1.06);filter:drop-shadow(0 0 12px #ffb7db)}}
+/* Bright arena, with dark high-contrast question and report dialogs. */
+:root{--bg:#edf3ff;--panel:#ffffff;--line:#ccd7ed;--ink:#243352;--muted:#536581;--cyan:#086f91;--pink:#9e327c;--gold:#8a5708;--green:#16865e;--red:#b32b4b}
+body{background-color:var(--bg);background-image:radial-gradient(ellipse at 8% 8%,#c5f3f1,transparent 48%),radial-gradient(ellipse at 95% 38%,#f8d9eb,transparent 50%),linear-gradient(145deg,#edf2ff,#ede5ff 65%,#dff5f2)}
+body:before{background-image:linear-gradient(#718bd410 1px,transparent 1px),linear-gradient(90deg,#718bd410 1px,transparent 1px);mask-image:none}
+body:after{background:radial-gradient(circle at 70% 5%,#fff9,transparent 25%)}
+.panel{background:linear-gradient(135deg,#fffffff2,#f8faffeb);box-shadow:0 14px 40px #667cad16}
+button{background:#edf2ff;color:var(--ink)}button:not(:disabled):hover{background:#dfe8fc}
+.primary{background:#087d9e;color:white;border-color:#087d9e;box-shadow:0 5px 20px #087d9e20}.primary:not(:disabled):hover{background:#086782}
+.secondary{background:#f5e9f4;border-color:#dac3dc;color:#8e3578}.quiet{background:transparent}
+input,select{background:#fff;border-color:#b8c9e2;color:var(--ink)}input::placeholder{color:#657a99}
+.audio-controls{background:#ffffffa6}.mini-cell{background:#fff}.mini-cell.lit{border-color:#62b8cf}
+.badge,.entry-guide{background:#e3f5f9;border-color:#abd9e4}.pill{background:#ffffff70}.credits .designer{color:#506383}
+.player{color:#f2f6ff;background:#15233b}.player-meta{color:#c2cde3}
+.turn-line{background:#18283e;border-radius:12px;padding:10px 12px;color:#e6ecf8}.turn-line .muted{color:#c2cde3;flex-shrink:0}
+.stat{background:#edf4ff}.stat b{color:#11688d}.notice,#audioNotice{color:#825200}
+.cell[data-tier="1"]:not(.x):not(.o){background:linear-gradient(145deg,#e2f6ed,#d4ecdf);border-color:#9fc8b5}
+.cell[data-tier="2"]:not(.x):not(.o){background:linear-gradient(145deg,#fff3d9,#f5e7c5);border-color:#dbc28b}
+.cell[data-tier="3"]:not(.x):not(.o){background:linear-gradient(145deg,#eee5fc,#e3d6f3);border-color:#baa2d4}
+.cell .level,.cell .level i{color:#465d68}.cell[data-tier="2"] .level,.cell[data-tier="2"] .level i{color:#78602e}.cell[data-tier="3"] .level,.cell[data-tier="3"] .level i{color:#6a5087}
+.cell:not(:disabled):hover{filter:brightness(1.04);box-shadow:0 3px 12px #63769c30}
+.legend>span{padding:3px 7px;border-radius:7px}.legend>span:nth-child(1){background:#d4ecdf;color:#375e4e}.legend>span:nth-child(2){background:#f5e7c5;color:#78602e}.legend>span:nth-child(3){background:#e3d6f3;color:#6a5087}
+.board .cell.answer-bad:not(.x):not(.o){background:#7c1935;border-color:#ff687e}.board .cell.answer-bad .level,.board .cell.answer-bad .level i{color:white}
+.cell.winner{border-color:#16865e;box-shadow:0 0 18px #16865e70}
+.feedback.good{background:#e8f6f0;border-color:#91cbb5}.feedback.bad{background:#fff0f3;border-color:#e8a8b8}.feedback .question{margin-bottom:12px}
+.q-visual{--muted:#c1cee5;background:#13213a;color:#f2f6ff;border-color:#3a506d}
+.game-layout>*,.side,.feedback{min-width:0}.game-heading{flex-wrap:wrap}.game-heading>div:last-child{display:flex;flex-wrap:wrap;gap:6px}
+dialog{--ink:#f2f6ff;--muted:#bbc9e2;--cyan:#57e6f9;--pink:#ff79c7;--gold:#ffdc83;--green:#8af3c0;--red:#ff9baf;--line:#3b4b6b;color:var(--ink)}
+dialog button{background:#21314f;color:var(--ink)}dialog button:not(:disabled):hover{background:#304667}dialog .primary{background:#57e6f9;border-color:#57e6f9;color:#071b29}dialog .primary:not(:disabled):hover{background:#a2f4ff}dialog .secondary{background:#ff79c713;color:#ff99d3;border-color:#a56491}dialog .quiet{background:transparent}dialog .danger{color:var(--red)}
+dialog input{background:#080f21;color:var(--ink);border-color:#4a5e80}dialog .entry-guide{background:#57e6f909;border-color:#57e6f950}dialog .credits .designer{color:#d3dcef}dialog .notice{color:var(--gold)}
+#resultDialog{overflow-wrap:anywhere;isolation:isolate;background:#10162f;border-color:#887cd0;box-shadow:0 24px 110px #171139aa,0 0 35px #8d7aff40}
+#resultDialog:before{content:"";position:absolute;inset:0;min-height:100%;z-index:-1;pointer-events:none;border-radius:inherit;background:radial-gradient(ellipse at 20% 15%,#704dc475,transparent 45%),radial-gradient(ellipse at 85% 55%,#167eaa70,transparent 45%),radial-gradient(ellipse at 10% 90%,#a3387c55,transparent 45%);background-size:150% 150%;animation:galaxy-drift 14s ease-in-out infinite alternate}
+#resultDialog:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(circle,#dfeaffb0 1px,transparent 1.6px),radial-gradient(circle,#adc7ff80 1px,transparent 2px);background-size:83px 109px,137px 157px;background-position:18px 12px,45px 59px;opacity:.4}
+#resultDialog .result-card{background:#0b173b99;border-color:#7f90cb66}#resultDialog .report-text{background:#080f21dc;min-height:300px;font-size:.85rem}
+#resultDialog #copyReportBtn{background:#2468df;color:#fff;border-color:#80aaff;box-shadow:0 5px 24px #2468df50;font-weight:bold}#resultDialog #copyReportBtn:hover{background:#1a55bf}
+#resultDialog summary{cursor:pointer;padding:12px 0;color:#d7e8ff}#resultDialog .dialog-inner{position:relative}
+@keyframes galaxy-drift{from{background-position:0% 0%}to{background-position:100% 85%}}
+@media(max-width:400px){.legend{gap:4px}.legend>span{padding:3px 5px}.turn-line{padding:8px}.game-heading h1{font-size:1rem}.pattern-steps{gap:4px}.q-visual{padding:8px}}
+@media(prefers-reduced-motion:reduce){#resultDialog:before{animation:none}}
+/* Self-contained parchment illustration; text stays selectable and accessible. */
+.side .victory-map{position:relative;isolation:isolate;margin:8px 6px 12px;padding:36px 28px 44px;border:0;border-radius:0;background:none;box-shadow:none;filter:drop-shadow(0 12px 10px #79572b30);transform-origin:50% 8%;animation:map-breeze 8s ease-in-out infinite;}
+.map-art{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;}
+.victory-map h2{color:#654222;text-align:center;margin-bottom:20px;font-size:1.08rem;}
+.victory-map .rules{color:#5e4933;line-height:2;padding-right:19px;}
+.victory-map .rules strong{color:#402c19;}
+.victory-map .rules li{margin:12px 0; padding-right:3px;}
+.victory-map .rules li::marker{color:#926335;font-weight:bold;}
+.victory-map .source-note{color:#70573c;border-top:1px dashed #a47b4959;padding-top:12px;}
+.victory-map .source-note:empty{display:none;}
+@keyframes map-breeze{0%,100%{transform:perspective(900px) rotateX(0deg) rotateZ(-.45deg) translateY(0)}35%{transform:perspective(900px) rotateX(1.5deg) rotateZ(.55deg) translateY(-3px)}70%{transform:perspective(900px) rotateX(-.7deg) rotateZ(-.15deg) translateY(-1px)}}
+@media(max-width:360px){.side .victory-map{padding:32px 22px 38px;}}
+/* Live learning trail: one independent card per student. */
+.map-journeys{display:grid;gap:12px;margin-bottom:18px}.journey{padding:12px;border:1px dashed #a47b49;border-radius:14px;background:#fff5dc99;min-width:0;color:#513a23}.journey h3{font-size:.85rem;margin:0;overflow-wrap:anywhere}.journey p{font-size:.75rem;margin:5px 0 0}.trail{display:block;width:100%;height:86px;overflow:visible}.trail-base{fill:none;stroke:#b6a183;stroke-width:3;stroke-dasharray:5 6}.trail-lit{fill:none;stroke:#237750;stroke-width:4;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .7s}.journey.started .trail-lit{stroke-dashoffset:.67}.journey.unlocked .trail-lit{stroke-dashoffset:0}.trail-stop{fill:#f9e8c6;stroke:#a48a67;stroke-width:2}.journey.started .trail-start,.journey.unlocked .trail-middle{fill:#2a865b;stroke:#185b3c}.treasure-lid{transform-origin:212px 42px;transition:transform .7s}.journey.finished .treasure-lid{transform:translateY(-13px) rotate(-12deg)}.treasure-spark{opacity:0;fill:#9c6209}.journey.finished .treasure-spark{opacity:1}.earned-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.earned-badge{border:1px solid #b8954e;border-radius:9px;background:#fff1bd;color:#624513;padding:3px 7px;font-size:.73rem}.result-card .journey{margin-top:12px;background:#fff0ce;color:#513a23}.bot-persona{display:flex;gap:10px;align-items:center;margin:0 0 14px;padding:10px 12px;border:1px solid #abd9e4;background:#eaf8fb;border-radius:14px}.bot-avatar{font-size:1.8rem}.bot-persona strong{font-size:.8rem;color:#13637c}.bot-persona p{font-size:.8rem;margin:0;color:#38546a}#sessionTag{max-width:none;white-space:normal;overflow-wrap:anywhere}.victory-map details summary{cursor:pointer;font-size:.8rem;color:#654222;padding:5px 0}
+@media(prefers-reduced-motion:reduce){.side .victory-map{animation:none;transform:none;}}
+.subject-picker{min-width:0;margin:18px 0;padding:12px;border:1px solid #57e6f950;border-radius:14px}.subject-picker legend{font-weight:bold;padding:0 6px}.subject-options{display:grid;gap:8px}.subject-options label{display:flex;align-items:center;gap:9px;padding:10px;background:#57e6f909;border-radius:9px;cursor:pointer}.subject-options input{width:20px;height:20px;flex:0 0 20px;accent-color:#57e6f9}.subject-options label:has(input:checked){background:#57e6f918;box-shadow:inset 0 0 0 1px #57e6f950}
+.question-topic{color:#70edff;font-size:1.18rem;line-height:1.8;overflow-wrap:anywhere}.dialog-top .question-topic{flex:1;min-width:0}#questionMeta{margin:4px 0 8px}.solution-steps{padding-inline-start:24px;margin:8px 0;line-height:2}.solution-steps li{margin:8px 0;overflow-wrap:anywhere}.solution-answer{font-weight:bold;border-top:1px solid #70edff40;padding-top:10px}
+</style>
+</head>
+<body>
+<noscript>برای اجرای بازی، جاوااسکریپت مرورگر باید فعال باشد.</noscript>
+<div class="shell">
+<header class="topbar"><div class="brand"><div class="logo" aria-hidden="true">Xᵒ</div><div><strong>باشگاه ریاضی با مقدم</strong></div></div><div class="tools"><button id="musicBtn" class="small quiet" aria-pressed="false" aria-label="روشن کردن موسیقی">♫ خاموش</button><button id="helpBtn" class="small quiet">راهنما</button></div></header>
+<div class="audio-controls" aria-label="تنظیمات صدا"><label for="volumeControl">بلندی صدا</label><input id="volumeControl" type="range" min="0" max="100" value="24" aria-valuetext="۲۴ درصد"><output id="volumeValue" for="volumeControl">۲۴٪</output><label class="check"><input id="effectsEnabled" type="checkbox" checked> افکت دکمه‌ها</label></div>
+<p id="audioNotice" hidden role="status"></p>
+<main>
+<section id="setupView" class="hero" aria-label="ورود به بازی">
+<div class="hero-copy"><h1>میدان دوز<br><span>عملیات جبری</span></h1><p class="intro">هر خانه یک چالش ریاضی؛ هر پاسخ درست یک قدم تا پیروزی. چهار مهره را پشت‌سرهم بچین و فرمانروای عملیات جبری شو.</p><div class="preview" aria-hidden="true"><div class="mini-cell lit">X</div><div class="mini-cell">O</div><div class="mini-cell lit">X</div><div class="mini-cell">?</div></div><div class="pill-row"><span class="pill">صفحهٔ ۵ × ۵</span><span class="pill">کاملاً آفلاین</span><span class="pill">تک‌نفره / دونفره</span></div></div>
+<form id="setupForm" class="panel" novalidate>
+<h2 class="form-title">ورود به میدان</h2><p class="subtitle">مشخصاتت را وارد کن و رقیبت را انتخاب کن.</p>
+<div class="entry-guide"><h3>اول راهنما، بعد نبرد!</h3><p>۴ مهرهٔ متوالی بچین تا برنده شوی. برای گرفتن هر خانه، سؤالش را درست جواب بده؛ سپس «ادامهٔ بازی» را بزن تا نوبت حریف شود.</p><p>سؤال سخت بود؟ قبل از پاسخ، برگرد و خانهٔ دیگری انتخاب کن.</p><button id="readGuideBtn" type="button" class="secondary wide">خواندن راهنمای کامل (الزامی)</button><p id="guideStatus" role="status">برای فعال‌شدن شروع بازی، راهنما را باز کن و برگرد.</p></div>
+<div class="field"><label for="studentName">نام و نام خانوادگی دانش‌آموز</label><input id="studentName" name="studentName" maxlength="60" autocomplete="name" placeholder="مثلاً: علی احمدی" required></div>
+<div class="field"><label for="classNumber">شمارهٔ کلاس</label><input id="classNumber" name="classNumber" maxlength="20" inputmode="numeric" placeholder="مثلاً: ۷۰۱" required></div>
+<div class="row"><div class="field"><label for="playerMark">مهرهٔ تو</label><select id="playerMark"><option value="X">ضربدر ×</option><option value="O">دایره ○</option></select></div><div class="field"><label>رنگ مهره‌ها</label><div class="row"><div><label for="colorX">ضربدر ×</label><input id="colorX" type="color" value="#57e6f9"></div><div><label for="colorO">دایره ○</label><input id="colorO" type="color" value="#ff79c7"></div></div></div></div><p class="subtitle">تو بازی را شروع می‌کنی؛ مهرهٔ دیگر برای حریف است.</p>
+<label>حالت بازی</label><div class="mode-grid" role="group" aria-label="حالت بازی"><button type="button" class="mode active" id="modeAI" aria-pressed="true">◈ با کامپیوتر</button><button type="button" class="mode" id="modeFriend" aria-pressed="false">✦ با دوستت</button></div>
+<div id="friendFields" hidden><div class="field"><label for="friendName">نام و نام خانوادگی بازیکن دوم</label><input id="friendName" maxlength="60" autocomplete="off" placeholder="نام دوستت"></div><div class="field"><label for="friendClass">شمارهٔ کلاس بازیکن دوم</label><input id="friendClass" maxlength="20" inputmode="numeric" placeholder="مثلاً: ۷۰۲"></div><p class="subtitle">دونفره روی همین دستگاه؛ در هر نوبت گوشی را به نفر بعد بدهید.</p></div>
+<fieldset id="subjectPicker" class="subject-picker" aria-describedby="subjectHelp subjectError"><legend>مبحث سؤال‌ها</legend><p id="subjectHelp" class="subtitle">می‌توانی یک یا چند گزینه را انتخاب کنی؛ سؤال‌ها فقط از مباحث انتخاب‌شده می‌آیند.</p><div class="subject-options"><label><input type="checkbox" name="subject" value="pattern"> الگوهای عددی</label><label><input type="checkbox" name="subject" value="expression"> عبارت‌های جبری</label><label><input type="checkbox" name="subject" value="value"> مقدار عددی یک عبارت جبری</label><label><input type="checkbox" name="subject" value="equation"> معادله</label></div><p id="subjectError" class="error" role="status" hidden></p></fieldset>
+<div class="row"><div class="field"><label for="difficulty">سطح سؤال</label><select id="difficulty"><option value="mixed">ترکیبی · پیشنهادی</option><option value="easy">تمرینی · ساده</option><option value="medium">متوسط</option><option value="hard">چالشی</option></select></div><div class="field"><label for="timeMode">زمان پاسخ</label><select id="timeMode"><option value="0">بدون محدودیت</option><option value="60">۶۰ ثانیه</option><option value="45">۴۵ ثانیه</option><option value="30">۳۰ ثانیه</option></select></div></div>
+<div id="botStrengthField" class="field"><label for="botDifficulty">قدرت جبرینو</label><select id="botDifficulty" aria-describedby="botStrengthHelp"><option value="easy">تازه‌کار</option><option value="medium" selected>معمولی</option><option value="hard">حرفه‌ای</option></select><p id="botStrengthHelp" class="source-note">مستقل از سطح سؤال؛ فقط مهارت چیدن مهره‌ها تغییر می‌کند. جبرینو در هر سه حالت پاسخ درست می‌دهد.</p></div>
+<label class="check"><input id="musicAtStart" type="checkbox" checked> پخش موسیقی پس از شروع بازی</label><p class="source-note">مشخصات فقط در همین صفحه استفاده می‌شوند؛ به جایی ارسال یا با بستن صفحه ذخیره نمی‌شوند.</p><p id="formError" class="error" role="alert"></p><button id="startBtn" type="submit" class="primary wide" disabled>شروع نبرد ←</button>
+</form></section>
+<section id="gameView" hidden aria-label="صفحهٔ بازی">
+<div class="game-heading"><div><h1>میدان دوز عملیات جبری</h1><div id="sessionTag" class="session-tag"></div></div><div><button id="openReportBtn" class="small secondary" hidden>📋 گزارش بازی</button> <button id="leaveBtn" class="small quiet">پایان بازی / بازی جدید</button></div></div>
+<div class="game-layout"><div class="panel arena"><div id="botPersona" class="bot-persona" hidden><span class="bot-avatar" aria-hidden="true">🤖</span><div><strong>جبرینو · رقیب مهربان تو</strong><p id="botSpeech" role="status" aria-live="polite" aria-atomic="true"></p></div></div><div class="players"><div class="player active" id="playerX"><div class="player-name"><span class="player-symbol" aria-hidden="true">X</span><span id="nameX"></span></div><div id="metaX" class="player-meta"></div></div><div class="player o" id="playerO"><div class="player-name"><span class="player-symbol" aria-hidden="true">O</span><span id="nameO"></span></div><div id="metaO" class="player-meta"></div></div></div><div class="turn-line"><strong id="turnLabel" class="turn-label" role="status" aria-live="polite"></strong><span id="turnCount" class="muted"></span></div><div id="board" class="board" role="group" aria-label="صفحه پنج در پنج؛ چهار مهره متوالی برای برد"></div><div class="legend"><span>● ساده</span><span>●● متوسط</span><span>●●● چالشی</span><span>✦ چهار مهره = برد</span></div></div>
+<aside class="side"><div class="panel"><h2>گزارش میدان <span aria-hidden="true">↗</span></h2><p id="status" class="status" role="status" aria-live="polite"></p><div class="stats"><div class="stat"><b id="filledCount">۰ از ۲۵</b><small>خانه‌های تصاحب‌شده</small></div><div class="stat"><b id="accuracy">—</b><small>دقت پاسخ بازیکن‌ها</small></div></div><details id="botDetails" class="activity" hidden><summary>سؤال و پاسخ آخر ربات</summary><div id="botWork"></div></details></div><div class="panel victory-map"><svg class="map-art" viewBox="0 0 400 540" preserveAspectRatio="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="mapPaper" x1="0" y1="0" x2="1" y2=".3"><stop stop-color="#d6ad70"/><stop offset=".07" stop-color="#f5dfaf"/><stop offset=".32" stop-color="#fff1d1"/><stop offset=".36" stop-color="#eed4a1"/><stop offset=".4" stop-color="#fff0cf"/><stop offset=".67" stop-color="#fae6bf"/><stop offset=".71" stop-color="#e6c58f"/><stop offset=".75" stop-color="#f9e6c0"/><stop offset="1" stop-color="#dcb67d"/></linearGradient><radialGradient id="mapLight"><stop stop-color="#fff6e2" stop-opacity=".94"/><stop offset=".8" stop-color="#fff3db" stop-opacity=".8"/><stop offset="1" stop-color="#fff0d0" stop-opacity="0"/></radialGradient></defs><path d="M12 17 Q60 3 108 14 L139 8 167 16 Q235 4 279 15 L318 7 347 14 385 10 Q377 90 390 155 L383 232 390 307 Q378 399 389 516 L355 512 326 526 292 518 Q238 535 188 523 L144 531 111 519 Q57 530 12 519 L18 480 9 447 Q20 358 11 290 L17 224 10 151 Q20 80 12 17Z" fill="url(#mapPaper)" stroke="#b88d55" stroke-width="1.5"/><g fill="none" stroke="#a77e49" opacity=".22" stroke-width="1.4"><path d="M23 105 Q70 50 121 96 T230 89 T376 48 M21 119 Q70 66 120 109 T230 104 T377 63 M22 135 Q74 81 124 124 T230 119 T378 78 M20 439 Q80 384 125 435 T243 439 T380 397 M20 454 Q80 399 125 450 T243 454 T380 412 M19 470 Q80 414 125 465 T243 469 T380 427"/><path d="M34 495 C90 477 32 401 86 378 S153 328 112 277 166 210 222 174 306 129 354 49" stroke-dasharray="5 7" stroke-width="2.5"/><path d="M139 20 L145 514 M282 22 L289 510 M22 270 Q200 258 379 273" stroke="#8d693c"/><path d="M28 31 Q190 41 372 27 L369 501 Q205 516 30 503Z" stroke-dasharray="2 5"/></g><ellipse cx="200" cy="277" rx="175" ry="237" fill="url(#mapLight)"/><g transform="translate(49 57)" stroke="#956b39" fill="none" opacity=".55"><circle r="20"/><circle r="14"/><path d="M0-29 5-5 0 29-5 5Z" fill="#ad8650"/><path d="M-28 0-5-5 28 0 5 5Z"/><path d="M-17-17 17 17 M17-17-17 17"/></g><g transform="translate(344 487)" stroke="#996341" stroke-width="3" stroke-linecap="round" opacity=".5"><path d="M-9-9 9 9 M9-9-9 9"/><circle r="19" fill="none" stroke-width="1" stroke-dasharray="3 4"/></g><path d="M13 518 Q50 496 88 519 Q49 514 15 532Z M319 14 Q352 29 385 10 L383 34 Q356 42 319 14Z" fill="#c39a60" opacity=".5"/></svg><h2>نقشهٔ پیروزی</h2><div id="mapJourneys" class="map-journeys"></div><details><summary>یادآوری قوانین میدان</summary><ol class="rules"><li>خانهٔ خالی را لمس کن و سؤالش را حل کن.</li><li>پاسخ درست: <strong>خانه مال توست.</strong> پاسخ غلط: خانه خالی می‌ماند و نوبت عوض می‌شود.</li><li><strong>۴ مهرهٔ متوالی</strong> افقی، عمودی یا قطری بچین.</li><li>با هر ۳ پاسخ درست پیاپی، یک راهنما می‌گیری؛ سقف ذخیره ۲ تاست.</li></ol></details><p id="opponentNote" class="source-note"></p></div></aside></div>
+</section>
+</main>
+<footer class="credits"><div class="designer">طراح : محمد  رضازاده مقدم</div><a href="https://eitaa.com/MathClub789" target="_blank" rel="noopener noreferrer">کانال : باشگاه ریاضی با مقدم | <bdi data-keep-digits>MathClub789</bdi> ↗</a></footer>
+</div>
+<dialog id="questionDialog" aria-labelledby="questionTitle"><div class="dialog-inner"><div class="dialog-top"><h2 id="questionTitle" class="question-topic">مبحث سؤال</h2><span id="timerLabel" class="timer"></span></div><div id="timerBar" class="progress" hidden><div id="timerFill"></div></div><p id="questionMeta" class="subtitle"></p><p id="questionOwner" class="subtitle"></p><div id="questionText" class="question"></div><div id="questionVisual" class="q-visual" hidden></div><div id="options" class="options"></div><form id="numberForm" hidden><label for="numberAnswer">پاسخ عددی را وارد کن (فارسی یا انگلیسی)</label><div class="answer-row"><input id="numberAnswer" type="text" inputmode="decimal" autocomplete="off" maxlength="16" aria-describedby="numberError"><button id="answerBtn" class="primary" type="submit">ثبت پاسخ</button></div><p id="numberError" class="error" role="alert"></p></form><div id="hintRow" class="hint-row"><button id="hintBtn" class="small secondary">✦ راهنما</button><span id="hintCount"></span></div><p id="hintText" class="hint-text" hidden></p><button id="backQuestionBtn" class="quiet wide" type="button">↩ برگشت و انتخاب خانهٔ دیگر</button><div id="feedback" class="feedback" hidden aria-live="polite"><h3 id="feedbackTitle"></h3><div id="feedbackText"></div><button id="nextBtn" class="primary wide">ادامهٔ بازی ←</button></div><div class="credits dialog-credits"><div class="designer">طراح : محمد  رضازاده مقدم</div><a href="https://eitaa.com/MathClub789" target="_blank" rel="noopener noreferrer">کانال : باشگاه ریاضی با مقدم | <bdi data-keep-digits>MathClub789</bdi> ↗</a></div></div></dialog>
+<dialog id="helpDialog" aria-labelledby="helpTitle"><div class="dialog-inner"><div class="dialog-top"><h2 id="helpTitle">راهنمای میدان دوز عملیات جبری</h2><button id="closeHelp" class="small quiet">بستن ✕</button></div><div class="help-copy"><ul class="rules"><li>مهره‌ات (ضربدر یا دایره) و رنگ هر دو مهره را انتخاب کن. تو شروع‌کننده‌ای؛ بازی با دوست، نوبتی روی همین دستگاه است.</li><li>برای برد، ۴ مهرهٔ خودت را افقی، عمودی یا قطری پشت سر هم بچین.</li><li>خانهٔ خالی را انتخاب کن و پاسخ درست را بزن. پاسخ غلط یا پایان زمان، خانه را خالی می‌گذارد و سؤالش را عوض می‌کند.</li><li>بعد از دیدن راه‌حل خودت و نیز سؤال و پاسخ ربات، «ادامهٔ بازی» را بزن. حرکت آخر ربات دست‌کم ۴ ثانیه نمایش داده می‌شود؛ نتیجه با زدن دکمه باز می‌شود.</li><li>سؤال سخت بود؟ با «برگشت و انتخاب خانهٔ دیگر» برگرد؛ نوبتت حفظ می‌شود. با انتخاب دوبارهٔ همان خانه، سؤال تازه و غیرتکراری از همان مبحث می‌آید و زمان پاسخ از مدت کاملِ انتخاب‌شده شروع می‌شود.</li><li>با ۱ راهنما شروع می‌کنی؛ راهنما دو گزینهٔ غلط را حذف می‌کند. هر ۳ پاسخ درست پیاپی، ۱ راهنما می‌دهد (حداکثر ۲).</li><li>سطح سؤال و قدرت جبرینو مستقل‌اند. قدرت تازه‌کار، معمولی یا حرفه‌ای فقط انتخاب خانهٔ ربات را تغییر می‌دهد؛ ربات همیشه سؤال را درست حل می‌کند.</li><li>نقشهٔ هر دانش‌آموز جداست: اولین پاسخ درست، شروع مسیر را روشن می‌کند؛ سه پاسخ درست پیاپی مسیر گنج را نمایان می‌کند. پایان بازی، حتی پایان زودهنگام، صندوق عملکرد همین دست را باز می‌کند.</li><li>نشان «سه‌تیر دقیق»: سه پاسخ درست پیاپی. «بازگشت قهرمانانه»: سه پاسخ درست پیاپی پس از یک خطا (پایان زمان هم خطاست). «دقت طلایی»: حداقل پنج پاسخ و دقت واقعی حداقل ۹۰٪ در پایان بازی. استفاده از راهنما مانع دریافت نشان نیست؛ نشان‌ها در دست بعد از نو محاسبه می‌شوند.</li><li>صفحهٔ پرِ بدون برنده یا ۸ نوبت پیاپی بدون تصاحب خانه، مساوی است.</li></ul></div><div id="guideConfirmation" class="entry-guide"><button id="confirmGuideBtn" class="primary wide" type="button">راهنما را خواندم؛ بازگشت به ورود ←</button></div><div class="credits dialog-credits"><div class="designer">طراح : محمد  رضازاده مقدم</div><a href="https://eitaa.com/MathClub789" target="_blank" rel="noopener noreferrer">کانال : باشگاه ریاضی با مقدم | <bdi data-keep-digits>MathClub789</bdi> ↗</a></div></div></dialog>
+<dialog id="resultDialog" aria-labelledby="resultTitle"><div class="dialog-inner"><div class="result-icon" id="resultIcon" aria-hidden="true">✦</div><h2 id="resultTitle" class="result-title"></h2><p id="resultMessage" class="result-message"></p><div id="resultStats"></div><p class="source-note">این گزارش آموزشی فقط مربوط به همین دست بازی است و نمرهٔ رسمی نیست. برای فرستادن آن به معلم، «کپی گزارش» را بزن و متن را در پیام‌رسان دلخواه بچسبان.</p><div class="report-buttons"><button id="copyReportBtn" class="primary">📋 کپی گزارش</button></div><p id="reportNotice" role="status" class="notice"></p><details><summary>📝 متن کامل گزارش عملکرد</summary><label for="reportText">گزارش آمادهٔ ارسال</label><textarea id="reportText" class="report-text" readonly></textarea></details><div class="result-actions"><button id="rematchBtn" class="primary">یک نبرد دیگر با همین بازیکن‌ها</button><button id="viewBoardBtn">دیدن صفحهٔ نهایی</button><button id="newPlayersBtn" class="quiet">تغییر بازیکن‌ها و تنظیمات</button></div><div class="credits dialog-credits"><div class="designer">طراح : محمد  رضازاده مقدم</div><a href="https://eitaa.com/MathClub789" target="_blank" rel="noopener noreferrer">کانال : باشگاه ریاضی با مقدم | <bdi data-keep-digits>MathClub789</bdi> ↗</a></div></div></dialog>
+<dialog id="leaveDialog" aria-labelledby="leaveTitle"><div class="dialog-inner"><h2 id="leaveTitle">بازی فعلی تمام شود؟</h2><p class="muted">بازی پایان می‌یابد و گزارش تا همین لحظه آماده می‌شود؛ می‌توانی پیش از شروع بازی جدید، آن را کپی کنی و در پیام‌رسان بفرستی.</p><div class="row"><button id="cancelLeave" class="primary">ادامهٔ همین بازی</button><button id="confirmLeave" class="danger">بله، پایان و گزارش</button></div><div class="credits dialog-credits"><div class="designer">طراح : محمد  رضازاده مقدم</div><a href="https://eitaa.com/MathClub789" target="_blank" rel="noopener noreferrer">کانال : باشگاه ریاضی با مقدم | <bdi data-keep-digits>MathClub789</bdi> ↗</a></div></div></dialog>
+<dialog id="celebrationDialog" aria-labelledby="celebrationTitle"><div id="celebrationDecor" aria-hidden="true"></div><div class="dialog-inner celebration-copy"><div id="celebrationFlowers" class="flower-garland" aria-hidden="true"></div><h2 id="celebrationTitle"></h2><p id="celebrationMessage"></p><div class="flower-garland" id="celebrationFooter" aria-hidden="true"></div><p class="subtitle">هر وقت آماده بودی، دکمهٔ زیر را بزن تا گزارش عملکردت را ببینی.</p><button id="skipCelebration" class="primary wide" type="button">مشاهدهٔ گزارش عملکرد 📋</button></div></dialog>
+<div id="answerToast" class="answer-toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+<audio id="music" loop preload="auto" playsinline src="1.mp3"></audio>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const fa=n=>String(n).replace(/[0-9٠-٩]/g,d=>'۰۱۲۳۴۵۶۷۸۹'[/[0-9]/.test(d)?Number(d):d.charCodeAt(0)-1632]);
+function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+const math=s=>{
+ const text=fa(s).replace(/-/g,'−').replace(/\./g,'٫');
+ // Each operand is a complete parenthesized expression or an atomic term.
+ const fraction=/(\([^()]+\)|[−+]?[۰-۹\d]*[a-zA-Z]+|[−+]?[۰-۹\d]+)\s*\/\s*(\([^()]+\)|[۰-۹\d]*[a-zA-Z]+|[۰-۹\d]+)/g;
+ let result='',last=0;for(const m of text.matchAll(fraction)){result+=escapeHTML(text.slice(last,m.index))+'<span class="frac" role="math" aria-label="'+escapeHTML('صورت '+m[1]+'، مخرج '+m[2])+'"><span class="num">'+escapeHTML(m[1])+'</span><span class="den">'+escapeHTML(m[2])+'</span></span>';last=m.index+m[0].length;}
+ return '<bdi class="math" dir="ltr">'+result+escapeHTML(text.slice(last))+'</bdi>';
+};
+// Localize visible text only; never modify URLs, SVG coordinates or answer keys.
+function localizeText(root){if(root.nodeType===3){if(root.parentElement&&!root.parentElement.closest('script,style,textarea,[data-keep-digits]')){const value=fa(root.nodeValue);if(value!==root.nodeValue)root.nodeValue=value;}return;}if(root.nodeType===1&&!root.matches('script,style'))for(const child of root.childNodes)localizeText(child);}
+localizeText(document.body);
+new MutationObserver(records=>{for(const r of records){if(r.type==='characterData')localizeText(r.target);else for(const node of r.addedNodes)localizeText(node);}}).observe(document.body,{childList:true,characterData:true,subtree:true});
+for(const id of ['studentName','classNumber','friendName','friendClass','numberAnswer'])$(id).addEventListener('input',e=>{const el=e.target,start=el.selectionStart,end=el.selectionEnd;el.value=fa(el.value);if(start!==null)el.setSelectionRange(start,end);});
+const rand=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const pick=a=>a[rand(0,a.length-1)];
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=rand(0,i);[a[i],a[j]]=[a[j],a[i]];}return a;}
+const levelNames=['','ساده','متوسط','چالشی'];
+const subjectNames={pattern:'الگوهای عددی',expression:'عبارت‌های جبری',value:'مقدار عددی یک عبارت جبری',equation:'معادله'};
+const selectedSubjects=()=>[...document.querySelectorAll('input[name="subject"]:checked')].map(input=>input.value);
+const questionLevelNames={easy:'تمرینی',medium:'متوسط',hard:'چالشی',mixed:'ترکیبی'};
+const botLevelNames={easy:'تازه‌کار',medium:'معمولی',hard:'حرفه‌ای'};
+const achievementRules=[
+ {id:'triple',name:'سه‌تیر دقیق',icon:'🎯',rule:'سه پاسخ درست پیاپی',test:s=>s.bestStreak>=3},
+ {id:'comeback',name:'بازگشت قهرمانانه',icon:'🌱',rule:'سه پاسخ درست پیاپی پس از یک خطا',test:s=>s.comeback},
+ {id:'gold',name:'دقت طلایی',icon:'🏅',rule:'حداقل پنج پاسخ و دقت حداقل ۹۰٪ در پایان بازی',test:(s,final)=>final&&s.correct+s.wrong>=5&&s.correct*10>=(s.correct+s.wrong)*9}
+];
+function earnedBadges(s,final=false){return achievementRules.filter(b=>b.test(s,final));}
+const botLines={
+ start:['ببینم امروز چه نقشه‌ای برای برد داری!','من جبرینو هستم؛ بریم یک رقابت دوستانه داشته باشیم!','آماده‌ای؟ با حوصله حل کن و مسیرت رو بچین.'],
+ good:['این حرکتت حساب‌شده بود!','چه خوب حلش کردی؛ حالا مسیر چهارتایی رو ببین.','آفرین به تمرکزت؛ رقابت داره جالب می‌شه!'],
+ retry:['هنوز فرصت هست؛ حرکت بعدی رو با دقت برو.','این یکی رو با هم از روی راه‌حل یاد بگیریم.','اشتباه بخشی از یادگیریه؛ سؤال بعدی یک فرصت تازه‌ست.'],
+ studentWin:['چه برد قشنگی! از رقابت باهات لذت بردم.','آفرین! این دست مسیرت رو خوب چیدی.'],
+ botWin:['این دست من بردم؛ دست بعد یک فرصت تازه برای توئه!','ممنون از رقابتت! یادگیری تو از نتیجهٔ این دست مهم‌تره.'],
+ tie:['چه رقابت نزدیکی! هر دومون برای دست بعد آماده‌تریم.'],
+ ended:['خسته نباشی! صندوق عملکردت رو ببین؛ بعداً ادامه می‌دیم.']
+};
+const botLineCounts={};
+function speakBot(event){if(!cfg||cfg.mode!=='ai')return;const lines=botLines[event],n=botLineCounts[event]||0;botLineCounts[event]=n+1;$('botSpeech').textContent=lines[n%lines.length];}
+function journeyCard(p,final=state.over){
+ const s=state.players[p],card=document.createElement('section');
+ card.className='journey'+(s.correct?' started':'')+(s.bestStreak>=3?' unlocked':'')+(final?' finished':'');card.dataset.player=p;
+ const title=document.createElement('h3');title.textContent=cfg.names[p]+(final?' · صندوق عملکرد':' · مسیر یادگیری');card.append(title);
+ // The SVG is decorative; equivalent progress and treasure states are written below it.
+ card.insertAdjacentHTML('beforeend','<svg class="trail" viewBox="0 0 250 90" aria-hidden="true" focusable="false"><path class="trail-base" d="M22 60 C55 5 80 85 120 45 S165 60 204 53"/><path class="trail-lit" pathLength="1" d="M22 60 C55 5 80 85 120 45 S165 60 204 53"/><circle class="trail-stop trail-start" cx="22" cy="60" r="8"/><circle class="trail-stop trail-middle" cx="120" cy="45" r="8"/><g stroke="#704219" stroke-width="2"><rect x="195" y="44" width="42" height="29" rx="4" fill="#c98a30"/><path d="M204 47V72 M228 47V72" stroke="#ffe19a" stroke-width="4"/><path class="treasure-lid" d="M193 45V37 Q215 18 239 37V45Z" fill="#dfa440"/><rect x="212" y="45" width="8" height="12" rx="2" fill="#ffe19a"/></g><path class="treasure-spark" d="m204 14 3 5-3 5-3-5Zm23-9 3 6-3 6-3-6Zm-11 25 3 5-3 5-3-5Z"/></svg>');
+ const progress=document.createElement('p');progress.textContent=(s.correct?'✓ شروع روشن':'○ شروع: اولین پاسخ درست')+' · '+(s.bestStreak>=3?'✓ مسیر گنج نمایان':'مسیر گنج: سه درست پیاپی');card.append(progress);
+ const chest=document.createElement('p');chest.textContent=final?'🔓 صندوق باز شد · '+fa(s.correct)+' پاسخ درست · بهترین زنجیره: '+fa(s.bestStreak):'🔒 صندوق در پایان همین دست باز می‌شود.';card.append(chest);
+ const badges=earnedBadges(s,final),list=document.createElement('div');list.className='earned-badges';
+ for(const b of badges){const badge=document.createElement('span');badge.className='earned-badge';badge.dataset.badge=b.id;badge.textContent=b.icon+' '+b.name;badge.title=b.rule;badge.setAttribute('aria-label',b.name+'؛ '+b.rule);list.append(badge);}card.append(list);
+ if(final&&!badges.length){const note=document.createElement('p');note.textContent='این بار نشانی کسب نشد؛ دست بعد برای سه پاسخ درست پیاپی تلاش کن.';card.append(note);}
+ return card;
+}
+function renderJourneys(){
+ // Avoid replacing the illustration on unrelated renders (e.g. using a hint).
+ const key=JSON.stringify([state.over,cfg.mode,...state.players.map(s=>[s.correct,s.wrong,s.bestStreak,s.comeback])]);
+ if($('mapJourneys').dataset.key===key)return;
+ $('mapJourneys').dataset.key=key;
+ for(let p=0;p<(cfg.mode==='friend'?2:1);p++){
+  const next=journeyCard(p),previous=$('mapJourneys').querySelector('[data-player="'+p+'"]');
+  if(!previous){$('mapJourneys').append(next);continue;}
+  // Keep the mounted SVG so progress and chest transitions actually animate.
+  previous.className=next.className;
+  [...previous.children].filter(el=>!el.matches('svg')).forEach(el=>el.remove());
+  previous.prepend(next.querySelector('h3'));
+  [...next.children].filter(el=>!el.matches('svg')).forEach(el=>previous.append(el));
+ }
+}
+
+let mode='ai', cfg=null, state=null, question=null, timer=null, botTimeout=null, botReviewTimer=null, musicWanted=false, currentCell=null;
+const music=$('music');music.volume=.24;
+let audioContext=null;
+function sound(kind='click'){if(!$('effectsEnabled').checked||music.volume===0)return;try{const Audio=window.AudioContext||window.webkitAudioContext;if(!Audio)return;audioContext ||= new Audio();if(audioContext.state==='suspended')audioContext.resume().catch(()=>{});const osc=audioContext.createOscillator(),gain=audioContext.createGain(),now=audioContext.currentTime;osc.type='sine';osc.frequency.setValueAtTime(kind==='correct'?660:kind==='wrong'?180:440,now);osc.frequency.exponentialRampToValueAtTime(kind==='correct'?990:kind==='wrong'?90:620,now+.09);gain.gain.setValueAtTime(Math.max(.0001,music.volume*.22),now);gain.gain.exponentialRampToValueAtTime(.0001,now+.13);osc.connect(gain);gain.connect(audioContext.destination);osc.start(now);osc.stop(now+.14);osc.onended=()=>{osc.disconnect();gain.disconnect();};}catch(e){/* Audio is optional; gameplay must continue. */}}
+document.addEventListener('click',e=>{const button=e.target.closest('button');if(button&&!button.disabled)sound();},true);
+$('volumeControl').oninput=()=>{music.volume=Number($('volumeControl').value)/100;$('volumeValue').textContent=fa($('volumeControl').value)+'٪';$('volumeControl').setAttribute('aria-valuetext',fa($('volumeControl').value)+' درصد');};
+$('volumeControl').onchange=()=>sound();
+function setMusicUI(on){$('musicBtn').textContent=on?'♫ روشن':'♫ خاموش';$('musicBtn').setAttribute('aria-pressed',String(on));$('musicBtn').setAttribute('aria-label',on?'خاموش کردن موسیقی':'روشن کردن موسیقی');}
+// Ignore completions from older play requests after a stop or visibility change.
+let musicRequest=0;
+async function startMusic(){
+ musicWanted=true;
+ if(document.hidden)return;
+ if(!music.paused&&!music.error){setMusicUI(true);return;}
+ const request=++musicRequest;
+ try{
+  await music.play();
+  if(request!==musicRequest)return;
+  if(!musicWanted||document.hidden){music.pause();return;}
+  setMusicUI(true);$('audioNotice').hidden=true;
+ }catch(e){
+  if(request!==musicRequest)return;
+  musicWanted=false;setMusicUI(false);
+  $('audioNotice').textContent=music.error?'فایل آهنگ قابل پخش نیست؛ فایل 1.mp3 نسخهٔ جدید را کنار فایل بازی قرار بده.':'مرورگر پخش را متوقف کرد؛ برای پخش آهنگ روی دکمهٔ ♫ بزن.';
+  $('audioNotice').hidden=false;
+ }
+}
+function stopMusic(){musicWanted=false;++musicRequest;music.pause();setMusicUI(false);}
+$('musicBtn').onclick=()=>musicWanted?stopMusic():startMusic();
+document.addEventListener('visibilitychange',()=>{
+ if(document.hidden){++musicRequest;music.pause();}
+ else if(musicWanted)startMusic();
+});
+let guideRead=false;
+function showHelp(){const inGame=!!cfg&&!!state;$('guideConfirmation').hidden=inGame;$('closeHelp').hidden=!inGame;$('helpDialog').showModal();}
+$('helpBtn').onclick=showHelp;$('readGuideBtn').onclick=showHelp;
+function closeHelp(){ $('helpDialog').close(); }
+$('closeHelp').onclick=closeHelp;$('confirmGuideBtn').onclick=closeHelp;
+$('helpDialog').addEventListener('close',()=>{guideRead=true;$('startBtn').disabled=false;$('guideStatus').textContent='✅ راهنما دیده شد؛ آمادهٔ شروع بازی هستی!';});
+function setMode(m){mode=m;$('modeAI').classList.toggle('active',m==='ai');$('modeFriend').classList.toggle('active',m==='friend');$('modeAI').setAttribute('aria-pressed',String(m==='ai'));$('modeFriend').setAttribute('aria-pressed',String(m==='friend'));$('friendFields').hidden=m!=='friend';$('botStrengthField').hidden=m!=='ai';$('botDifficulty').disabled=m!=='ai';$('friendName').required=m==='friend';$('friendClass').required=m==='friend';}
+const setupMessages={studentName:'لطفاً نام و نام خانوادگی خودت را وارد کن.',classNumber:'لطفاً شمارهٔ کلاس خودت را وارد کن.',friendName:'لطفاً نام و نام خانوادگی بازیکن دوم را وارد کن.',friendClass:'لطفاً شمارهٔ کلاس بازیکن دوم را وارد کن.'};
+for(const id of Object.keys(setupMessages)){const input=$(id),error=document.createElement('p');error.id=id+'Error';error.className='error';error.hidden=true;input.after(error);input.setAttribute('aria-describedby',error.id);input.addEventListener('input',()=>{if($('formError').textContent)validateSetup();});}
+function validateSetup(focus=false){let first=null;for(const [id,message] of Object.entries(setupMessages)){const input=$(id),error=$(id+'Error'),missing=input.required&&!input.value.trim();error.textContent=missing?message:'';error.hidden=!missing;if(missing){input.setAttribute('aria-invalid','true');if(!first)first=input;}else input.removeAttribute('aria-invalid');}const noSubject=!selectedSubjects().length;$('subjectError').hidden=!noSubject;$('subjectError').textContent=noSubject?'حداقل یک مبحث برای سؤال‌های بازی انتخاب کن.':'';$('subjectPicker').setAttribute('aria-invalid',String(noSubject));$('formError').textContent=first?'برای شروع بازی، مشخصات خالی را کامل کن. '+setupMessages[first.id]:noSubject?$('subjectError').textContent:'';if(focus){if(first)first.focus();else if(noSubject)document.querySelector('input[name="subject"]').focus();}return !first&&!noSubject;}
+for(const input of document.querySelectorAll('input[name="subject"]'))input.addEventListener('change',()=>{if($('formError').textContent||!$('subjectError').hidden)validateSetup();});
+$('modeAI').onclick=()=>{setMode('ai');if($('formError').textContent)validateSetup();};$('modeFriend').onclick=()=>{setMode('friend');if($('formError').textContent)validateSetup();};
+$('setupForm').onsubmit=e=>{e.preventDefault();if(!guideRead){$('formError').textContent='ابتدا راهنمای کامل را باز کن و برگرد.';return;}const name=$('studentName').value.trim(),cls=$('classNumber').value.trim(),other=$('friendName').value.trim(),otherClass=$('friendClass').value.trim();if(!validateSetup(true))return;cfg={mode,subjects:selectedSubjects(),marks:$('playerMark').value==='O'?['O','X']:['X','O'],colors:{X:$('colorX').value,O:$('colorO').value},difficulty:$('difficulty').value,botDifficulty:mode==='ai'?$('botDifficulty').value:null,seconds:Number($('timeMode').value),names:[name,mode==='ai'?'جبرینو':other],classes:[cls,mode==='ai'?'':otherClass]};if($('musicAtStart').checked)startMusic();else stopMusic();startGame();};
+function tier(i){if(cfg.difficulty==='easy')return 1;if(cfg.difficulty==='medium')return 2;if(cfg.difficulty==='hard')return 3;let r=Math.floor(i/5),c=i%5;return r>=1&&r<=3&&c>=1&&c<=3?3:((r===0||r===4)&&(c===0||c===4)?1:2);}
+function freshPlayer(){return{correct:0,wrong:0,hints:1,hintsUsed:0,timeouts:0,streak:0,bestStreak:0,comeback:false,topics:{}};}
+// Separate, non-repeating feedback sequences; rematches do not reset them.
+const feedbackStarts={good:['نِ مث که بلدی، آفرین!','ترکوندی نابغه!','این خونه حق تو بود!','چه جواب تمیزی!','دمت گرم ریاضی‌دان!','دقیق زدی به هدف!','عالی حلش کردی!','چه ذهن تیزی داری!','این شد یه حرکت حسابی!','خوش درخشیدی!','جواب درست همین بود!','آفرین به این تمرکز!','یه قدم جلو افتادی!','چه قشنگ حلش کردی!','ستارهٔ این سؤالی!','این یکی رو عالی رفتی!','خونه رو فتح کردی!','حسابی گل کاشتی!','ریاضی رو گرفتی رفیق!','همینه، دست‌مریزاد!'],bad:['این یکی نشد، فدای سرت!','یه پیچ کوچیک توی راه بود!','اشتباه هم جزئی از یادگیریه!','این خونه فعلاً منتظرته!','هنوز کلی فرصت داری!','این سؤال یه نکتهٔ قایمکی داشت!','یه نفس، یه نگاه دوباره!','جواب در رفت، یادگیری نه!','قرار نیست همیشه بار اول بشه!','این فقط یه دست‌گرمی بود!','یه مکث کوچیک بد نیست!','نابغه، این یکی رو مرور کنیم!','مسیر حل یه کوچولو عوض شد!','هنوز بازی ادامه داره رفیق!','این بار نشد؛ تسلیم نه!','این سؤال جا برای تمرین داشت!','یه تجربهٔ تازه جمع کردی!','این اشتباه آخر دنیا نیست!','راه درست همین نزدیکی‌هاست!','بیا از این سؤال یه نکته برداریم!']};
+const feedbackEnds={good:['همین تمرکز رو نگه دار.','حالا مسیر چهارتایی رو پیدا کن.','قدم‌به‌قدم پیش برو.','از این یادگیری لذت ببر.','حرکت بعدی رو با فکر بچین.','به تلاشت افتخار کن.','این دقت خیلی می‌چسبه.','یه لبخند هم جایزهٔ خودت کن.','با حوصله ادامه بده.','دانسته‌هات دارن به کارت میان.','ریاضی با تمرین شیرین‌تره.','بریم سراغ چالش بعدی.'],bad:['راه‌حل رو ببین، نکته‌ش دستت میاد.','با حوصله برای نوبت بعد آماده شو.','یه بار ترتیب عمل‌ها رو مرور کن.','روی یادگرفتن تمرکز کن، نه اشتباه.','از این تجربه برای سؤال بعد استفاده کن.','هنوز می‌تونی مسیر بازی رو عوض کنی.','با خودت مهربون باش و ادامه بده.','دفعهٔ بعد قبل از انتخاب، دوباره بررسی کن.','تمرین‌های کوچیک نتیجه‌های بزرگ می‌سازن.','سؤال بعد یه فرصت تازه‌ست.','همین که تلاش می‌کنی ارزشمنده.','آروم بخون، فکر کن، دوباره امتحان کن.']};
+const feedbackEmojis=['🌷✨','🌟💫','🌱💚','🧠⚡','🎯🌈','💪😊','🦋🌸','🚀⭐','📚💡','🌻❤️','🧩✨','🙌💎'];
+const feedbackCounters={good:0,bad:0};
+try{for(const k of ['good','bad']){const n=Number(sessionStorage.getItem('dooz-feedback-'+k));if(Number.isSafeInteger(n)&&n>=0)feedbackCounters[k]=n;}}catch(e){}
+function nextFeedback(ok){const k=ok?'good':'bad',n=feedbackCounters[k]++,starts=feedbackStarts[k],ends=feedbackEnds[k],size=starts.length*ends.length*feedbackEmojis.length;
+ try{sessionStorage.setItem('dooz-feedback-'+k,String(feedbackCounters[k]));}catch(e){}
+ // 997 is coprime to 2880: all combinations appear once before cycling.
+ let i=(n*997+137)%size;const emoji=feedbackEmojis[i%12];i=Math.floor(i/12);const end=ends[i%ends.length],start=starts[Math.floor(i/ends.length)];
+ return start+' '+emoji+' '+end+(n>=size?' · '+(ok?'درخشش':'فرصت تازه')+' شمارهٔ '+fa(n+1):'');
+}
+let answerEffectTimer=null;
+// Keep the board visible while the student reads the explanation.
+$('board').parentElement.append($('feedback'));
+function clearAnswerEffect(){clearTimeout(answerEffectTimer);$('board').classList.remove('answer-focus');for(const cell of $('board').children)cell.classList.remove('answer-good','answer-bad');$('answerToast').hidden=true;}
+function showAnswerEffect(index,ok,message=null){clearAnswerEffect();$('board').classList.add('answer-focus');$('board').children[index].classList.add(ok?'answer-good':'answer-bad');$('answerToast').textContent=message||nextFeedback(ok);$('answerToast').className='answer-toast'+(ok?'':' bad');$('answerToast').hidden=false;answerEffectTimer=setTimeout(clearAnswerEffect,4000);}
+function mark(p){return cfg.marks[p]==='X'?'×':'○';}
+function balancedCellSubjects(){
+ // One shuffled cycle across all cells, grouped by level: balanced overall AND within each level.
+ const subjects=shuffle(cfg.subjects.slice()),cells=Array(25);let cursor=0;
+ for(const level of shuffle([1,2,3])){
+  const indices=shuffle(Array.from({length:25},(_,i)=>i).filter(i=>tier(i)===level));
+  for(const i of indices)cells[i]=subjects[cursor++%subjects.length];
+ }
+ return cells;
+}
+function startGame(){const cellSubjects=balancedCellSubjects();gameQuestions.clear();subjectBags.clear();questionBags.clear();clearTimeout(botReviewTimer);$('nextBtn').disabled=false;$('nextBtn').textContent='ادامهٔ بازی ←';$('celebrationDialog').close();$('openReportBtn').hidden=true;document.documentElement.style.setProperty('--p0',cfg.colors[cfg.marks[0]]);document.documentElement.style.setProperty('--p1',cfg.colors[cfg.marks[1]]);clearAnswerEffect();$('feedback').hidden=true;clearInterval(timer);clearTimeout(botTimeout);question=null;state={startedAt:Date.now(),endedAt:null,history:[],board:Array(25).fill(null),turn:0,round:1,players:[freshPlayer(),freshPlayer()],locked:false,over:false,misses:0,last:-1,winLine:[],cellSubjects,pending:Array.from({length:25},(_,i)=>makeQuestion(tier(i),cellSubjects[i]))};$('setupView').hidden=true;$('gameView').hidden=false;$('botDetails').hidden=true;$('mapJourneys').dataset.key='';$('mapJourneys').replaceChildren();$('sessionTag').textContent='کلاس '+fa(cfg.classes[0])+' · سؤال '+questionLevelNames[cfg.difficulty]+' · '+(cfg.mode==='ai'?'جبرینو '+botLevelNames[cfg.botDifficulty]:'دونفره روی یک دستگاه');$('botPersona').hidden=cfg.mode!=='ai';speakBot('start');$('opponentNote').textContent=cfg.mode==='ai'?'':'پس از دیدن راه‌حل، «ادامهٔ بازی» را بزن و دستگاه را به دوستت بده.';$('status').textContent='چهار مهره تا پیروزی! یک خانهٔ خالی را انتخاب کن.';$('board').replaceChildren();for(let i=0;i<25;i++){let b=document.createElement('button');b.className='cell';b.type='button';b.dataset.index=i;b.onclick=()=>openQuestion(i);$('board').append(b);}render();window.scrollTo({top:0,behavior:'instant'});}
+function render(){if(!state)return;for(let p=0;p<2;p++){const k=p===0?'X':'O',s=state.players[p];$('player'+k).querySelector('.player-symbol').textContent=mark(p);$('name'+k).textContent=cfg.names[p];$('name'+k).title=cfg.names[p];$('meta'+k).textContent=fa(s.correct)+' درست · '+fa(s.wrong)+' خطا'+(cfg.mode==='ai'&&p===1?'':' · ✦ '+fa(s.hints));$('player'+k).classList.toggle('active',state.turn===p&&!state.over);}
+$('turnLabel').textContent=state.over?'پایان این نبرد':(state.botReview?'سؤال و پاسخ حرکت ربات را ببین':state.locked&&cfg.mode==='ai'&&state.turn===1?'ربات در حال فکر کردن…':'نوبت '+cfg.names[state.turn]);$('turnLabel').classList.toggle('pink',state.turn===1);$('turnCount').textContent='نوبت '+fa(state.round);
+[...$('board').children].forEach((b,i)=>{let v=state.board[i],t=tier(i);b.dataset.tier=t;b.className='cell'+(v!==null?(v===0?' x':' o'):'')+(state.last===i?' last':'')+(state.winLine.includes(i)?' winner':'');b.disabled=state.over||state.locked||v!==null||(cfg.mode==='ai'&&state.turn===1);b.innerHTML=v===null?'<span class="level"><i aria-hidden="true">'+'•'.repeat(t)+'</i>'+levelNames[t]+'</span>':mark(v);b.setAttribute('aria-label','ردیف '+fa(Math.floor(i/5)+1)+'، ستون '+fa(i%5+1)+'، '+(v===null?'خالی، '+levelNames[t]:cfg.names[v]+'، '+mark(v)));});$('filledCount').textContent=fa(state.board.filter(x=>x!==null).length)+' از ۲۵';const ps=cfg.mode==='ai'?[state.players[0]]:state.players;const ok=ps.reduce((n,p)=>n+p.correct,0),total=ps.reduce((n,p)=>n+p.correct+p.wrong,0);$('accuracy').textContent=total?fa(Math.round(ok/total*100))+'٪':'—';renderJourneys();}
+function win(board,p){for(let r=0;r<5;r++)for(let c=0;c<5;c++)for(const[dr,dc]of[[0,1],[1,0],[1,1],[1,-1]]){let line=[];for(let k=0;k<4;k++){let y=r+k*dr,x=c+k*dc;if(y<0||y>4||x<0||x>4||board[y*5+x]!==p)break;line.push(y*5+x);}if(line.length===4)return line;}return null;}
+function choiceQ(prompt,answer,distractors,explain,topic,hint,visual=''){return{prompt,answer,options:shuffle([answer,...distractors]),explain,topic,hint,numeric:false,visual};}
+// Parameterized algebra and illustrated pattern questions.
+// Shuffle bags rotate templates; recent fingerprints prevent exact repeats.
+const questionBags=new Map(), recentQuestions=new Set();
+const algebraTemplates=[
+ (a,b,v)=>['کتاب‌خوانی','هر روز '+math(v)+' صفحه کتاب می‌خوانیم. در '+fa(a)+' روز چند صفحه می‌خوانیم؟',`${a}${v}`,[`${v} + ${a}`,`${v} / ${a}`,`${v} − ${a}`],'تعداد روزها را در تعداد صفحه‌های هر روز ضرب کن.'],
+ (a,b,v)=>['بسته‌های مداد','در هر بسته '+math(v)+' مداد است. '+fa(a)+' بسته و '+fa(b)+' مدادِ جدا، روی هم چند مداد دارند؟',`${a}${v} + ${b}`,[`${a}(${v} + ${b})`,`${a}${v} − ${b}`,`${a+b}${v}`],'اول تعداد مدادهای بسته‌ها را بنویس؛ سپس مدادهای جدا را اضافه کن.'],
+ (a,b,v)=>['عبارت‌نویسی جبری',fa(b)+' واحد بیشتر از '+fa(a)+' برابر عدد '+math(v)+' کدام عبارت است؟',`${a}${v} + ${b}`,[`${a}${v} − ${b}`,`${a}(${v} + ${b})`,`${a+b}${v}`],'«برابر» یعنی ضرب؛ «بیشتر» یعنی جمع.'],
+ (a,b,v)=>['عبارت‌نویسی جبری',fa(b)+' واحد کمتر از '+fa(a)+' برابر عدد '+math(v)+' کدام است؟',`${a}${v} − ${b}`,[`${a}${v} + ${b}`,`${a}(${v} − ${b})`,`${b} − ${a}${v}`],'ابتدا چندبرابر عدد را بنویس؛ سپس مقدار گفته‌شده را از آن کم کن.'],
+ (a,b,v)=>['ماشین‌های ورودی و خروجی','ماشین به ورودی '+math(v)+'، '+fa(b)+' واحد اضافه می‌کند. عبارت خروجی چیست؟',`${v} + ${b}`,[`${b}${v}`,`${v} − ${b}`,`${v} / ${b}`],'عمل ماشین جمع است؛ خود ورودی هنوز یک حرف است.'],
+ (a,b,v)=>['ماشین‌های ورودی و خروجی','ماشین ورودی '+math(v)+' را در '+fa(a)+' ضرب می‌کند. خروجی کدام عبارت است؟',`${a}${v}`,[`${v} + ${a}`,`${v} / ${a}`,`${a} − ${v}`],'ضرب عدد در حرف را می‌توان بدون علامت ضرب نوشت.'],
+ (a,b,v)=>['تقسیم برابر',math(v)+' مهره را به‌طور مساوی در '+fa(a)+' جعبه می‌گذاریم. سهم هر جعبه کدام عبارت است؟',`${v} / ${a}`,[`${a}${v}`,`${v} − ${a}`,`${a} / ${v}`],'تعداد کل را بر تعداد جعبه‌ها تقسیم کن.'],
+ (a,b,v)=>['الگوهای عددی','جملهٔ '+math(v)+'ام این الگو را بنویس؛ شماره‌گذاری از یک شروع می‌شود.<br>'+math([1,2,3,4].map(k=>a*k).join(' , ')+' , …'),`${a}${v}`,[`${v} + ${a}`,`${a}${v} + 1`,`${a+1}${v}`],'هر جمله چند برابر شمارهٔ همان جمله است؟'],
+ (a,b,v)=>['محیط و مساحت','طول هر ضلع یک '+fa(a)+'ضلعی با ضلع‌های برابر، '+math(v)+' سانتی‌متر است. محیط کدام است؟',`${a}${v}`,[`${v} + ${a}`,`${v} × ${v}`,`${v} / ${a}`],'محیط، مجموع طول همهٔ ضلع‌هاست.'],
+ (a,b,v)=>['خرید دفتر','قیمت هر دفتر '+fa(a)+' هزار تومان است. هزینهٔ '+math(v)+' دفتر، بر حسب هزار تومان، کدام است؟',`${a}${v}`,[`${v} + ${a}`,`${v} / ${a}`,`${a} − ${v}`],'قیمت یک دفتر را در تعداد دفترها ضرب کن.'],
+ (a,b,v)=>['ذخیرهٔ امتیاز','بازیکنی '+math(v)+' امتیاز دارد و '+fa(b)+' امتیاز دیگر می‌گیرد. امتیاز جدیدش کدام عبارت است؟',`${v} + ${b}`,[`${b}${v}`,`${v} − ${b}`,`${b} − ${v}`],'امتیاز جدید به امتیاز قبلی اضافه می‌شود.'],
+ (a,b,v)=>['باقی‌مانده','از '+math(v)+' برچسب، '+fa(b)+' برچسب را به دوستمان می‌دهیم. عبارت تعداد باقی‌مانده چیست؟',`${v} − ${b}`,[`${v} + ${b}`,`${b} − ${v}`,`${b}${v}`],'تعداد برچسب‌های داده‌شده را از تعداد اولیه کم کن.'],
+ (a,b,v)=>['ماشین‌های ورودی و خروجی','ورودی '+math(v)+' ابتدا در '+fa(a)+' ضرب و سپس '+fa(b)+' واحد زیاد می‌شود. خروجی چیست؟',`${a}${v} + ${b}`,[`${a}(${v} + ${b})`,`${a}${v} − ${b}`,`${a+b}${v}`],'اول ضرب انجام می‌شود، بعد جمع.'],
+ (a,b,v)=>['ماشین‌های ورودی و خروجی','ورودی '+math(v)+' ابتدا '+fa(b)+' واحد زیاد و سپس در '+fa(a)+' ضرب می‌شود. خروجی چیست؟',`${a}(${v} + ${b})`,[`${a}${v} + ${b}`,`${a}(${v} − ${b})`,`${a+b}${v}`],'جمعِ مرحلهٔ اول را داخل پرانتز بگذار؛ کل آن در عدد ضرب می‌شود.'],
+ (a,b,v)=>['ماشین‌های ورودی و خروجی','ورودی '+math(v)+' ابتدا '+fa(b)+' واحد کم و سپس بر '+fa(a)+' تقسیم می‌شود. خروجی چیست؟',`(${v} − ${b}) / ${a}`,[`${v} − ${b} / ${a}`,`(${v} + ${b}) / ${a}`,`${a}(${v} − ${b})`],'تمامِ حاصل تفریق باید تقسیم شود؛ پرانتز لازم است.'],
+ (a,b,v)=>['هزینهٔ ثابت و متغیر','ارسال یک سفارش '+fa(b)+' هزار تومان و هر کتاب '+fa(a)+' هزار تومان هزینه دارد. هزینهٔ '+math(v)+' کتاب با یک بار ارسال، بر حسب هزار تومان، چیست؟',`${a}${v} + ${b}`,[`${a+b}${v}`,`${b}${v} + ${a}`,`${a}${v} − ${b}`],'هزینهٔ ارسال فقط یک بار است؛ فقط قیمت کتاب در تعداد ضرب می‌شود.'],
+ (a,b,v)=>['الگوهای عددی','جملهٔ '+math(v)+'ام این الگو چیست؟ شمارهٔ جملهٔ اول یک است.<br>'+math([1,2,3,4].map(k=>a*k+b).join(' , ')+' , …'),`${a}${v} + ${b}`,[`${a}${v} − ${b}`,`${a}(${v} + ${b})`,`${a+b}${v}`],'اختلاف جمله‌ها ضریب حرف است؛ برای یافتن بخش ثابت، جملهٔ اول را بررسی کن.'],
+ (a,b,v)=>['محیط و مساحت','طول مستطیل '+math(v)+' و عرض آن '+fa(b)+' سانتی‌متر است. محیط کدام عبارت است؟',`2(${v} + ${b})`,[`${b}${v}`,`${v} + ${b}`,`2${v} + ${b}`],'دو طول و دو عرض را با هم جمع کن.'],
+ (a,b,v)=>['محیط و مساحت','طول مستطیل '+math(v)+' و عرض آن '+fa(b)+' سانتی‌متر است. مساحت کدام عبارت است؟',`${b}${v}`,[`2(${v} + ${b})`,`${v} + ${b}`,`${v} × ${v}`],'مساحت مستطیل برابر طول ضرب‌در عرض است.'],
+ (a,b,v)=>['محیط و مساحت','ضلع مربع '+math(v+' + '+b)+' سانتی‌متر است. محیط آن چیست؟',`4(${v} + ${b})`,[`4${v} + ${b}`,`${v} + ${b+4}`,`2(${v} + ${b})`],'تمام طول ضلع، چهار بار تکرار می‌شود.'],
+ (a,b,v)=>['الگوی چوب‌کبریت','چند '+fa(a)+'ضلعی را زنجیروار کنار هم می‌چینیم؛ هر شکل جدید فقط یک ضلع مشترک با قبلی دارد. برای '+math(v)+' شکل، چند چوب‌کبریت لازم است؟',`${a-1}${v} + 1`,[`${a}${v}`,`${a-1}${v} − 1`,`${a}${v} + 1`],'شکل اول به تعداد ضلع‌هایش چوب دارد؛ هر شکل بعدی یک چوب کمتر اضافه می‌کند.'],
+ (a,b,v)=>['عبارت‌های جبری — ردیف صندلی‌ها','در هر ردیف '+math(v)+' صندلی است. از هر یک از '+fa(a)+' ردیف، '+fa(b)+' صندلی برداشته‌ایم. چند صندلی باقی است؟',`${a}(${v} − ${b})`,[`${a}${v} − ${b}`,`${a}(${v} + ${b})`,`${a}${v} + ${b}`],'ابتدا باقی‌ماندهٔ یک ردیف را بنویس؛ سپس تعداد ردیف‌ها را در نظر بگیر.'],
+ (a,b,v)=>['الگوهای کسری','جملهٔ '+math(v)+'ام این الگو چیست؟ شماره‌گذاری از یک شروع می‌شود.<br>'+math(`${a}/1 , ${a}/2 , ${a}/3 , ${a}/4 , …`),`${a} / ${v}`,[`${v} / ${a}`,`${a}${v}`,`${a} / (${v} + 1)`],'صورت ثابت است؛ مخرج، شمارهٔ جمله است.'],
+ (a,b,v)=>['پس‌انداز','هر هفته '+math(v)+' هزار تومان پس‌انداز می‌کنیم. پس از '+fa(a)+' هفته، '+fa(b)+' هزار تومان خرج می‌کنیم. باقی پول، بر حسب هزار تومان، چیست؟',`${a}${v} − ${b}`,[`${a}(${v} − ${b})`,`${a}${v} + ${b}`,`${b} − ${a}${v}`],'خرج فقط یک بار از مجموع پس‌انداز کم می‌شود.']
+];
+function patternVisual(kind){
+ const labels={squares:'مربع‌های چسبیده با ضلع مشترک',triangles:'مثلث‌های چسبیده با ضلع مشترک',separate:'مربع‌های جدا از هم',dots:'نقطه‌ها در دو ردیف و یک نقطهٔ اضافه'};
+ const stick=(x1,y1,x2,y2)=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#ffdc83" stroke-width="3" stroke-linecap="round"/><circle cx="${x2}" cy="${y2}" r="2.2" fill="#ff79c7"/>`;
+ let html='<div class="pattern-steps">';
+ for(let n=1;n<=3;n++){
+  let parts='',width=100;
+  if(kind==='squares'){const x=50-n*12;for(let j=0;j<n;j++){parts+=stick(x+j*24,24,x+(j+1)*24,24)+stick(x+j*24,48,x+(j+1)*24,48);}for(let j=0;j<=n;j++)parts+=stick(x+j*24,24,x+j*24,48);}
+  if(kind==='triangles'){const x=50-(n+1)*10;for(let j=0;j<=n;j++)parts+=stick(x+j*20,j%2?20:54,x+(j+1)*20,j%2?54:20);for(let j=0;j<n;j++)parts+=stick(x+j*20,j%2?20:54,x+(j+2)*20,j%2?20:54);}
+  if(kind==='separate'){const x=50-(n*27-7)/2;for(let j=0;j<n;j++){let l=x+j*27;parts+=stick(l,26,l+20,26)+stick(l+20,26,l+20,46)+stick(l+20,46,l,46)+stick(l,46,l,26);}}
+  if(kind==='dots'){for(let j=0;j<n;j++)for(let r=0;r<2;r++)parts+=`<circle cx="${18+j*19}" cy="${26+r*22}" r="5" fill="#57e6f9"/>`;parts+=`<circle cx="${18+n*19}" cy="37" r="5" fill="#ff79c7"/>`;}
+  const count=kind==='squares'?3*n+1:kind==='triangles'||kind==='dots'?2*n+1:4*n;
+  html+=`<div class="pattern-step"><svg viewBox="0 0 ${width} 74" role="img" aria-label="شکل ${fa(n)}: ${fa(count)} ${kind==='dots'?'نقطه':'چوب‌کبریت'}؛ ${labels[kind]}">${parts}</svg><small>شکل ${fa(n)}</small></div>`;
+ }
+ return html+'</div>';
+}
+for(const kind of ['squares','triangles','separate','dots'])algebraTemplates.push((a,b,v)=>{
+ const slope=kind==='squares'?3:kind==='separate'?4:2,constant=kind==='separate'?0:1;
+ const answer=slope*a+constant,unit=kind==='dots'?'نقطه':'چوب‌کبریت';
+ const description=kind==='squares'?'مربع‌های چسبیده، هر دو همسایه یک ضلع مشترک دارند.':kind==='triangles'?'مثلث‌های چسبیده، هر دو همسایه یک ضلع مشترک دارند.':kind==='separate'?'مربع‌ها از هم جدا هستند و ضلع مشترک ندارند.':'در هر مرحله، به هر ردیف یک نقطه اضافه می‌شود؛ نقطهٔ صورتی ثابت می‌ماند.';
+ return ['الگوی تصویری',description+' در ادامهٔ همین الگو، شکل شمارهٔ '+fa(a)+' چند '+unit+' دارد؟',String(answer),[String(answer-1),String(answer+1),String(answer+slope)],'از هر شکل به بعدی '+fa(slope)+' '+unit+' اضافه می‌شود. تعداد در شکل '+math('n')+'ام: '+math(`${slope}n${constant?' + 1':''}`)+'؛ پس برای شکل '+fa(a)+': '+math(`${slope} × ${a}${constant?' + 1':''} = ${answer}`)+'.',patternVisual(kind)];
+});
+const templateLevels={
+ // One-step expressions and direct proportional patterns.
+ 1:[0,4,5,6,7,8,9,10,11,18,26],
+ // Two-step expressions, perimeter, and a simple pictured linear pattern.
+ 2:[1,2,3,12,15,17,23,27],
+ // Grouping, fractional/general patterns, and shared-side matchsticks.
+ 3:[13,14,16,19,20,21,22,24,25]
+};
+// Additional parameterized templates covering the remaining chapter topics.
+function numberTask(topic,prompt,answer,solution){return [topic,prompt,String(answer),[String(answer+1),String(answer-1),String(answer+3)],solution];}
+function valueTask(expr,a,b,v,answer,steps){return numberTask('جای‌گذاری و محاسبه','اگر '+math(v+' = '+b)+' باشد، مقدار '+math(expr)+' چیست؟',answer,'به‌جای حرف، عدد داده‌شده را بگذار؛ ترتیب عملیات را رعایت کن.<br>'+math(steps+' = '+answer));}
+function equationTask(expr,v,answer,steps){return numberTask('حل معادله','مقدار '+math(v)+' را در معادلهٔ زیر پیدا کن.<br>'+math(expr),answer,'با انجام عمل یکسان در دو طرف، مجهول را تنها کن.<br>'+math(steps)+'<br>پاسخ را در معادله جای‌گذاری کن.');}
+const extraTemplates=[
+ [1,'value',(a,b,v)=>valueTask(`${a}${v}`,a,b,v,a*b,`${a} × ${b}`)],
+ [1,'value',(a,b,v)=>valueTask(`${v} + ${a}`,a,b,v,b+a,`${b} + ${a}`)],
+ [1,'value',(a,b,v)=>numberTask('محیط عددی','ضلع مربعی '+fa(b)+' سانتی‌متر است. با رابطهٔ '+math('P = 4a')+'، محیط را حساب کن.',4*b,'چهار ضلع برابر داریم: '+math(`4 × ${b} = ${4*b}`))],
+ [2,'value',(a,b,v)=>valueTask(`${a}${v} − ${b}`,a,-b,v,-a*b-b,`${a} × (${-b}) − ${b}`)],
+ [2,'value',(a,b,v)=>valueTask(`${a}(${v} + ${b})`,a,b,v,2*a*b,`${a} × (${b} + ${b})`)],
+ [2,'value',(a,b,v)=>valueTask(`${v} × ${v} − ${a}`,a,-b,v,b*b-a,`(${-b}) × (${-b}) − ${a}`)],
+ [3,'value',(a,b,v)=>valueTask(`${a}(${v} − ${b}) − 2${v}`,a,-b,v,-2*a*b+2*b,`${a} × (${-b} − ${b}) − 2 × (${-b})`)],
+ [3,'value',(a,b,v)=>numberTask('دو متغیر','اگر '+math(`x = ${a} , y = ${-b}`)+' باشد، مقدار '+math(`${a}(x − y) + xy`)+' چیست؟',a*a,'ابتدا پرانتز و ضرب‌ها: '+math(`${a} × (${a} + ${b}) + ${a} × (${-b}) = ${a*a}`))],
+ [3,'value',(a,b,v)=>valueTask(`(${a}${v} + ${a*b}) / ${a}`,a,-b,v,0,`(${a} × (${-b}) + ${a*b}) / ${a}`)],
+ [1,'equation',(a,b,v)=>equationTask(`${v} + ${a} = ${a+b}`,v,b,`${v} = ${a+b} − ${a} = ${b}`)],
+ [1,'equation',(a,b,v)=>equationTask(`${a}${v} = ${a*b}`,v,b,`${v} = ${a*b} / ${a} = ${b}`)],
+ [1,'equation',(a,b,v)=>equationTask(`${v} − ${b} = ${a}`,v,a+b,`${v} = ${a} + ${b} = ${a+b}`)],
+ [2,'equation',(a,b,v)=>equationTask(`${a}${v} + ${b} = ${b-a*b}`,v,-b,`${a}${v} = ${-a*b} → ${v} = ${-b}`)],
+ [2,'equation',(a,b,v)=>equationTask(`${v} / ${a} − ${b} = ${a}`,v,a*(a+b),`${v} / ${a} = ${a+b} → ${v} = ${a*(a+b)}`)],
+ [2,'equation',(a,b,v)=>numberTask('معادلهٔ خرید','برای '+fa(a)+' دفتر هم‌قیمت و '+fa(b)+' هزار تومان هزینهٔ ارسال، '+fa(a*b+b)+' هزار تومان پرداخت شد. قیمت هر دفتر چند هزار تومان است؟',b,'قیمت هر دفتر را x بگیر: '+math(`${a}x + ${b} = ${a*b+b} → ${a}x = ${a*b} → x = ${b}`))],
+ [3,'equation',(a,b,v)=>equationTask(`${a}(${v} − ${b}) = ${a-1}${v} + ${b}`,v,(a+1)*b,`${a}${v} − ${a*b} = ${a-1}${v} + ${b} → ${v} = ${(a+1)*b}`)],
+ [3,'equation',(a,b,v)=>equationTask(`(${v} − ${b}) / ${a} = ${v} / ${a+1}`,v,(a+1)*b,`${a+1}(${v} − ${b}) = ${a}${v} → ${v} = ${(a+1)*b}`)],
+ [3,'equation',(a,b,v)=>numberTask('معادلهٔ عددهای متوالی','مجموع سه عدد صحیح متوالی '+fa(3*b)+' است. کوچک‌ترین عدد چیست؟',b-1,'کوچک‌ترین عدد را x بگیر: '+math(`x + (x + 1) + (x + 2) = ${3*b} → 3x = ${3*b-3} → x = ${b-1}`))],
+ [1,'expression',(a,b,v)=>['جمع جمله‌های مشابه','عبارت '+math(`${a}${v} + ${b}${v}`)+' را ساده کن.',`${a+b}${v}`,[`${a*b}${v}`,`${a+b}`,`${a+b}${v} × ${v}`],'ضریب جمله‌های مشابه را جمع کن؛ قسمت حرفی ثابت می‌ماند.']],
+ [2,'expression',(a,b,v)=>['ساده‌سازی','عبارت '+math(`${a}${v} + ${b} + ${b}${v} − ${a}`)+' را ساده کن.',`${a+b}${v} + (${b-a})`,[`${a+b}${v} + ${b+a}`,`${a*b}${v} + (${b-a})`,`${a+b}${v} − (${b-a})`],'جمله‌های حرفی را با هم و عددهای ثابت را با هم جمع کن.']],
+ [3,'expression',(a,b,v)=>['توزیع و ساده‌سازی','عبارت '+math(`${a}(${v} + ${b}) − ${v}`)+' را ساده کن.',`${a-1}${v} + ${a*b}`,[`${a-1}${v} + ${b}`,`${a+1}${v} + ${a*b}`,`${a-1}${v} − ${a*b}`],'عدد بیرون پرانتز را در هر جمله ضرب کن، سپس جمله‌های مشابه را یکی کن.']],
+ [1,'pattern',(a,b,v)=>numberTask('ادامهٔ الگو','در الگوی عددی با اختلاف ثابت، عدد بعدی چیست؟<br>'+math([0,1,2,3].map(k=>b+a*k).join(' , ')+' , …'),b+4*a,'در هر مرحله '+fa(a)+' واحد اضافه می‌شود؛ عدد بعدی '+math(`${b+3*a} + ${a} = ${b+4*a}`)+' است.')],
+ [2,'pattern',(a,b,v)=>numberTask('مقدار جملهٔ الگو','جملهٔ شمارهٔ '+fa(b)+' در الگوی '+math([1,2,3,4].map(k=>a*k+1).join(' , '))+' با اختلاف ثابت چیست؟',a*b+1,'جملهٔ nام برابر '+math(`${a}n + 1`)+ ' است؛ بنابراین '+math(`${a} × ${b} + 1 = ${a*b+1}`)+'.')],
+ [3,'equation',(a,b,v)=>numberTask('معادله برای یافتن شمارهٔ جمله','در الگوی '+math([1,2,3,4].map(k=>a*k+b).join(' , '))+' با اختلاف ثابت، عدد '+fa(a*(b+3)+b)+' جملهٔ چندم است؟',b+3,'رابطهٔ جملهٔ nام: '+math(`${a}n + ${b}`)+'؛ حل کن: '+math(`${a}n + ${b} = ${a*(b+3)+b} → n = ${b+3}`))]
+];
+const templateSubjects=algebraTemplates.map((_,i)=>[7,16,20,22,24,25,26,27].includes(i)?'pattern':'expression');
+for(const [level,subject,template] of extraTemplates){templateLevels[level].push(algebraTemplates.length);templateSubjects.push(subject);algebraTemplates.push(template);}
+const subjectBags=new Map(), gameQuestions=new Set();
+// Worked solutions stay separate from the short, optional hint.
+function detailedExplanation(type,a,b,v,answer,hint){
+ const m=math;
+ let rule=hint,steps=[];
+ switch(type){
+ case 0: steps=['تعداد کل صفحه‌ها = تعداد روزها × صفحه‌های هر روز: '+m(`${a} × ${v} = ${a}${v}`),'حرف '+m(v)+' تعداد صفحه‌های یک روز است؛ جمع کردن تعداد روزها با آن، تعداد کل صفحه‌ها را نمی‌دهد.'];break;
+ case 1: steps=['مدادهای داخل بسته‌ها: '+m(`${a} × ${v} = ${a}${v}`)+'؛ سپس مدادهای جدا: '+m(`${a}${v} + ${b}`),'عدد '+fa(b)+' فقط یک بار اضافه می‌شود؛ این مدادها در هر بسته نیستند.'];break;
+ case 2: steps=['ابتدا '+fa(a)+' برابر عدد را می‌نویسیم: '+m(`${a} × ${v} = ${a}${v}`)+'؛ سپس '+fa(b)+' واحد بیشتر: '+m(`${a}${v} + ${b}`),'اگر جمع را داخل پرانتز بگذاریم، '+fa(b)+' هم در '+fa(a)+' ضرب می‌شود و معنای سؤال تغییر می‌کند.'];break;
+ case 3: steps=['ابتدا چندبرابر عدد: '+m(`${a}${v}`)+'؛ سپس کم کردن مقدار ثابت: '+m(`${a}${v} − ${b}`),'ترتیب تفریق مهم است؛ «کمتر از» یعنی مقدار ثابت را از چندبرابرِ عدد کم کنیم، نه برعکس.'];break;
+ case 4: case 10: steps=['مقدار اولیه '+m(v)+' است؛ با افزودن '+fa(b)+' واحد، مقدار جدید '+m(`${v} + ${b}`)+' می‌شود.','چون مقدار اولیه معلوم نیست، جواب یک عبارت جبری است؛ '+m(`${b}${v}`)+' به معنی ضرب است، نه افزودن.'];break;
+ case 5: case 9: steps=['تعداد × مقدار هر واحد: '+m(`${a} × ${v} = ${a}${v}`),'در نوشتن عبارت جبری، عددِ کنار حرف ضریب آن است؛ یعنی '+m(`${a}${v}`)+' همان '+m(`${a} × ${v}`)+' است.'];break;
+ case 6: steps=['سهم هر جعبه = تعداد کل ÷ تعداد جعبه‌ها: '+m(`${v} / ${a}`),'برای بررسی، سهم هر جعبه را در تعداد جعبه‌ها ضرب کن؛ دوباره تعداد کل به دست می‌آید: '+m(`(${v} / ${a}) × ${a} = ${v}`)];break;
+ case 7: steps=['شماره‌های یک تا چهار در '+fa(a)+' ضرب شده‌اند؛ پس برای شمارهٔ '+m(v)+' داریم: '+m(`${a} × ${v} = ${a}${v}`),'بررسی دو جملهٔ اول: '+m(`${a} × 1 = ${a}`)+' و '+m(`${a} × 2 = ${2*a}`)+'؛ هر دو با الگو سازگارند.'];break;
+ case 8: steps=['محیط = تعداد ضلع‌ها × طول یک ضلع: '+m(`${a} × ${v} = ${a}${v}`),'محیط طول دور شکل است و واحد آن سانتی‌متر است؛ ضرب طول در خودش، محیط را نمی‌دهد.'];break;
+ case 11: steps=['تعداد اولیه منهای تعداد داده‌شده: '+m(`${v} − ${b}`),'با برگرداندن برچسب‌ها باید تعداد اولیه حاصل شود: '+m(`(${v} − ${b}) + ${b} = ${v}`)];break;
+ case 12: steps=['مرحلهٔ اول: '+m(`${v} → ${a}${v}`)+'؛ مرحلهٔ دوم: '+m(`${a}${v} → ${a}${v} + ${b}`),'فقط ورودی در '+fa(a)+' ضرب شده است؛ مقدار '+fa(b)+' پس از ضرب اضافه می‌شود.'];break;
+ case 13: steps=['خروجی مرحلهٔ اول '+m(`${v} + ${b}`)+' است. کل این خروجی در '+fa(a)+' ضرب می‌شود: '+m(`${a}(${v} + ${b})`),'با توزیع ضرب: '+m(`${a}(${v} + ${b}) = ${a}${v} + ${a*b}`)+'؛ پس عدد ثابت هم باید ضرب شود.'];break;
+ case 14: steps=['پس از کم کردن، '+m(`${v} − ${b}`)+' داریم. حالا تمام این مقدار تقسیم می‌شود: '+m(`(${v} − ${b}) / ${a}`),'پرانتز نشان می‌دهد تفریق پیش از تقسیم انجام می‌شود؛ بدون آن فقط عدد دوم تقسیم خواهد شد.'];break;
+ case 15: steps=['هزینهٔ کتاب‌ها: '+m(`${a} × ${v} = ${a}${v}`)+'؛ با افزودن یک هزینهٔ ارسال: '+m(`${a}${v} + ${b}`),'هزینهٔ ارسال ثابت است، نه به‌ازای هر کتاب؛ واحد تمام هزینه‌ها در این سؤال هزار تومان است.'];break;
+ case 16: steps=['اختلاف ثابت '+fa(a)+' است. جملهٔ اول '+fa(a+b)+' است؛ بنابراین بخش ثابت: '+m(`${a+b} − ${a} = ${b}`)+' و رابطه: '+m(`${a}${v} + ${b}`),'بررسی با شمارهٔ یک و دو: '+m(`${a} × 1 + ${b} = ${a+b}`)+'؛ '+m(`${a} × 2 + ${b} = ${2*a+b}`)];break;
+ case 17: steps=['دو طول و دو عرض داریم: '+m(`${v} + ${v} + ${b} + ${b} = 2${v} + ${2*b}`),'با بیرون کشیدن ضریب دو: '+m(`2${v} + ${2*b} = 2(${v} + ${b})`)+'. واحد محیط سانتی‌متر است.'];break;
+ case 18: steps=['مساحت = طول × عرض: '+m(`${v} × ${b} = ${b}${v}`),'واحد پاسخ سانتی‌متر مربع است؛ جمع طول و عرض، مساحت را به دست نمی‌دهد.'];break;
+ case 19: steps=['طول یک ضلع '+m(`${v} + ${b}`)+' است؛ پس مجموع چهار ضلع '+m(`4(${v} + ${b})`)+ ' می‌شود.','توزیع ضرب نشان می‌دهد: '+m(`4(${v} + ${b}) = 4${v} + ${4*b}`)+'؛ عدد ثابت هم چهار بار تکرار شده است.'];break;
+ case 20: steps=['شکل اول '+fa(a)+' چوب دارد و هر شکل تازه '+fa(a-1)+' چوب اضافه می‌کند. برای '+m(v)+' شکل، '+m(`${v} − 1`)+ ' بار افزایش داریم: '+m(`${a} + ${a-1}(${v} − 1)`),'ساده‌سازی: '+m(`${a} + ${a-1}${v} − ${a-1} = ${a-1}${v} + 1`)+'. با شمارهٔ یک، '+fa(a)+' چوب به دست می‌آید.'];break;
+ case 21: steps=['در یک ردیف '+m(`${v} − ${b}`)+' صندلی باقی می‌ماند؛ برای '+fa(a)+' ردیف: '+m(`${a}(${v} − ${b})`),'در مجموع '+m(`${a} × ${b} = ${a*b}`)+' صندلی برداشته‌ایم؛ بنابراین شکل بازشدهٔ جواب '+m(`${a}${v} − ${a*b}`)+' است.'];break;
+ case 22: steps=['صورت همهٔ کسرها '+fa(a)+' و مخرج‌ها یک، دو، سه و چهارند؛ پس مخرج جملهٔ شمارهٔ '+m(v)+' همان '+m(v)+' است: '+m(`${a} / ${v}`),'برای شمارهٔ دو، رابطه '+m(`${a} / 2`)+ ' می‌دهد که همان جملهٔ دوم است. شماره‌گذاری از یک شروع می‌شود، نه صفر.'];break;
+ case 23: steps=['کل پس‌انداز '+m(`${a} × ${v} = ${a}${v}`)+' است. یک بار خرج را کم می‌کنیم: '+m(`${a}${v} − ${b}`),'اگر خرج را داخل پرانتزِ ضرب قرار دهیم، انگار در هر هفته آن مبلغ را خرج کرده‌ایم؛ این با سؤال فرق دارد.'];break;
+ case 24: case 25: case 26: case 27:{
+  const slope=type===24?3:type===26?4:2,c=type===26?0:1,first=slope+c;
+  rule=type===26?'هر مربع جدا چهار چوب دارد؛ هیچ ضلعی مشترک نیست.':type===27?'دو ردیف هر کدام به تعداد شمارهٔ شکل نقطه دارند و یک نقطه هم ثابت است.':'ضلع مشترک را دوباره نمی‌شماریم؛ هر شکل جدید فقط چوب‌های تازه را اضافه می‌کند.';
+  steps=['شکل اول '+fa(first)+' جزء دارد و در هر مرحله '+fa(slope)+' جزء اضافه می‌شود؛ رابطهٔ تعداد: '+m(`${slope}n${c?' + 1':''}`),'شمارهٔ خواسته‌شده را جای‌گذاری می‌کنیم: '+m(`${slope} × ${a}${c?' + 1':''} = ${answer}`)+'. بررسی شکل سوم: '+m(`${slope} × 3${c?' + 1':''} = ${3*slope+c}`)];break;
+ }
+ case 28: steps=[m(`${v} = ${b}`)+' را در عبارت می‌گذاریم: '+m(`${a}${v} = ${a} × ${b}`),'حاصل ضرب: '+m(`${a} × ${b} = ${a*b}`)];break;
+ case 29: steps=['به‌جای '+m(v)+'، '+fa(b)+' می‌گذاریم: '+m(`${v} + ${a} = ${b} + ${a}`),'حاصل جمع: '+m(`${b} + ${a} = ${b+a}`)];break;
+ case 30: steps=['در رابطهٔ محیط، حرف '+m('a')+' طول یک ضلع است؛ پس '+m(`P = 4 × ${b}`),'چهار ضلع برابر را جمع می‌کنیم: '+m(`${b} + ${b} + ${b} + ${b} = ${4*b}`)+'. واحد محیط سانتی‌متر است.'];break;
+ case 31: steps=['عدد منفی را داخل پرانتز جای‌گذاری می‌کنیم: '+m(`${a} × (${-b}) − ${b}`),'ابتدا ضرب، سپس تفریق: '+m(`${-a*b} − ${b} = ${-a*b-b}`)+'. ضرب عدد مثبت در منفی، منفی است.'];break;
+ case 32: steps=['جای‌گذاری و محاسبهٔ پرانتز: '+m(`${a} × (${b} + ${b}) = ${a} × ${2*b}`),'حالا ضرب می‌کنیم: '+m(`${a} × ${2*b} = ${2*a*b}`)];break;
+ case 33: steps=['جای‌گذاری: '+m(`(${-b}) × (${-b}) − ${a}`)+'. حاصل ضرب دو عدد منفی مثبت است: '+m(`(${-b}) × (${-b}) = ${b*b}`),'اکنون تفریق: '+m(`${b*b} − ${a} = ${b*b-a}`)];break;
+ case 34: steps=['ابتدا جای‌گذاری و پرانتز: '+m(`${a} × (${-b} − ${b}) − 2 × (${-b})`)+ '؛ مقدار پرانتز '+m(`${-b} − ${b} = ${-2*b}`)+' است.','ضرب‌ها را انجام می‌دهیم؛ کم کردن عدد منفی به جمع تبدیل می‌شود: '+m(`${-2*a*b} − (${-2*b}) = ${-2*a*b} + ${2*b} = ${answer}`)];break;
+ case 35: steps=['هر دو مقدار '+m(`x = ${a}`)+' و '+m(`y = ${-b}`)+' را در همهٔ جایگاه‌هایشان می‌گذاریم: '+m(`${a}(x − y) + xy = ${a} × (${a} − (${-b})) + ${a} × (${-b})`)+'. کم کردن عدد منفی به جمع تبدیل می‌شود؛ پس '+m(`${a} − (${-b}) = ${a+b}`)+' و '+m(`${a} × (${-b}) = ${-a*b}`)+'.','ابتدا ضرب بیرون پرانتز، سپس جمع: '+m(`${a} × ${a+b} + (${-a*b}) = ${a*(a+b)} − ${a*b} = ${a*a}`)];break;
+ case 36: steps=['صورت کسر را حساب می‌کنیم: '+m(`${a} × (${-b}) + ${a*b} = ${-a*b} + ${a*b} = 0`),'مخرج '+fa(a)+' و ناصفر است؛ بنابراین '+m(`0 / ${a} = 0`)+'. صفر تقسیم بر عدد ناصفر، صفر است.'];break;
+ case 37: steps=['از هر دو طرف '+fa(a)+' کم می‌کنیم: '+m(`${v} + ${a} − ${a} = ${a+b} − ${a}`)+'؛ پس '+m(`${v} = ${b}`),'آزمایش در معادلهٔ اولیه: '+m(`${b} + ${a} = ${a+b}`)+'. دو طرف برابرند.'];break;
+ case 38: steps=['هر دو طرف را بر ضریب مجهول، یعنی '+fa(a)+'، تقسیم می‌کنیم: '+m(`${v} = ${a*b} / ${a} = ${b}`),'آزمایش: '+m(`${a} × ${b} = ${a*b}`)+'. پس مقدار پیدا‌شده معادله را درست می‌کند.'];break;
+ case 39: steps=['به هر دو طرف '+fa(b)+' اضافه می‌کنیم: '+m(`${v} − ${b} + ${b} = ${a} + ${b}`)+'؛ پس '+m(`${v} = ${a+b}`),'آزمایش: '+m(`${a+b} − ${b} = ${a}`)+'. دو طرف برابرند.'];break;
+ case 40: steps=['از هر دو طرف '+fa(b)+' کم می‌کنیم: '+m(`${a}${v} = ${b-a*b} − ${b} = ${-a*b}`)+'؛ سپس تقسیم بر '+fa(a)+': '+m(`${v} = ${-a*b} / ${a} = ${-b}`),'آزمایش: '+m(`${a} × (${-b}) + ${b} = ${b-a*b}`)];break;
+ case 41: steps=['به دو طرف '+fa(b)+' اضافه می‌کنیم: '+m(`${v} / ${a} = ${a} + ${b} = ${a+b}`)+'؛ سپس هر دو طرف را در '+fa(a)+' ضرب می‌کنیم: '+m(`${v} = ${a*(a+b)}`),'آزمایش: '+m(`${a*(a+b)} / ${a} − ${b} = ${a+b} − ${b} = ${a}`)];break;
+ case 42: rule='قیمت هر دفتر را مجهول بگیر؛ هزینهٔ دفترها به‌اضافهٔ ارسال برابر کل پرداخت است.';steps=['معادله: '+m(`${a}x + ${b} = ${a*b+b}`)+'؛ با کم کردن ارسال از دو طرف: '+m(`${a}x = ${a*b}`)+'؛ با تقسیم بر تعداد دفترها: '+m(`x = ${a*b} / ${a} = ${b}`),'آزمایش هزینهٔ کل: '+m(`${a} × ${b} + ${b} = ${a*b+b}`)+'. پس قیمت هر دفتر '+fa(b)+' هزار تومان است.'];break;
+ case 43: steps=['پرانتز را باز می‌کنیم: '+m(`${a}${v} − ${a*b} = ${a-1}${v} + ${b}`)+'؛ از دو طرف '+m(`${a-1}${v}`)+' کم می‌کنیم: '+m(`${v} − ${a*b} = ${b}`)+'؛ سپس '+fa(a*b)+' اضافه می‌کنیم: '+m(`${v} = ${(a+1)*b}`),'آزمایش؛ طرف چپ: '+m(`${a} × (${(a+1)*b} − ${b}) = ${a*a*b}`)+'؛ طرف راست: '+m(`${a-1} × ${(a+1)*b} + ${b} = ${a*a*b}`)];break;
+ case 44: steps=['دو طرف را در حاصل‌ضرب مخرج‌های ناصفر ضرب می‌کنیم: '+m(`${a+1}(${v} − ${b}) = ${a}${v}`)+'؛ با باز کردن پرانتز و کم کردن '+m(`${a}${v}`)+': '+m(`${v} − ${(a+1)*b} = 0`)+ '؛ پس '+m(`${v} = ${(a+1)*b}`),'آزمایش؛ طرف چپ: '+m(`(${(a+1)*b} − ${b}) / ${a} = ${b}`)+'؛ طرف راست: '+m(`${(a+1)*b} / ${a+1} = ${b}`)];break;
+ case 45: rule='عددهای صحیح متوالی یکی‌یکی زیاد می‌شوند؛ اگر اولی را x بگیریم، دو عدد بعدی x+1 و x+2 هستند.';steps=['معادلهٔ مجموع: '+m(`x + (x + 1) + (x + 2) = ${3*b}`)+'؛ جمع جمله‌های مشابه: '+m(`3x + 3 = ${3*b}`)+'؛ پس '+m(`3x = ${3*b-3} → x = ${b-1}`),'آزمایش سه عدد: '+m(`${b-1} + ${b} + ${b+1} = ${3*b}`)+'. سؤال کوچک‌ترین عدد را می‌خواهد، نه عدد میانی.'];break;
+ case 46: steps=['چون قسمت حرفی دو جمله یکسان است، ضریب‌ها جمع می‌شوند: '+m(`${a}${v} + ${b}${v} = (${a} + ${b})${v} = ${a+b}${v}`),'قسمت حرفی تغییر نمی‌کند؛ اینجا جمع داریم، نه ضرب دو حرف در هم.'];break;
+ case 47: steps=['جمله‌های مشابه را کنار هم می‌گذاریم: '+m(`(${a}${v} + ${b}${v}) + (${b} − ${a})`),'ضریب‌ها و ثابت‌ها را جدا حساب می‌کنیم: '+m(`${a} + ${b} = ${a+b}`)+' و '+m(`${b} − ${a} = ${b-a}`)+'؛ بنابراین '+m(`${a+b}${v} + (${b-a})`)+'. علامت منفیِ عدد ثابت را حفظ می‌کنیم.'];break;
+ case 48: steps=['ضرب را در هر دو جمله پخش می‌کنیم: '+m(`${a}(${v} + ${b}) − ${v} = ${a}${v} + ${a*b} − ${v}`),'ضریب حرف تنها، یک است؛ پس '+m(`${a}${v} − ${v} = (${a} − 1)${v} = ${a-1}${v}`)+' و عبارت نهایی '+m(`${a-1}${v} + ${a*b}`)+' می‌شود.'];break;
+ case 49: steps=['اختلاف دو جملهٔ پیاپی: '+m(`${b+a} − ${b} = ${a}`)+' و '+m(`${b+2*a} − ${b+a} = ${a}`),'همین اختلاف را به آخرین جمله اضافه می‌کنیم: '+m(`${b+3*a} + ${a} = ${b+4*a}`)];break;
+ case 50: steps=['اختلاف ثابت '+fa(a)+' و جملهٔ اول '+fa(a+1)+' است؛ رابطهٔ جملهٔ شمارهٔ '+m('n')+': '+m(`${a}n + 1`),'شمارهٔ خواسته‌شده را جای‌گذاری می‌کنیم: '+m(`${a} × ${b} + 1 = ${a*b} + 1 = ${a*b+1}`)+'. این پاسخ مقدار جمله است، نه شمارهٔ آن.'];break;
+ case 51: steps=['شمارهٔ مجهول را '+m('n')+' می‌گیریم. اختلاف دو جملهٔ پیاپی '+m(`${2*a+b} − ${a+b} = ${a}`)+' است. چون شماره‌گذاری از یک شروع می‌شود، بخش ثابت برابر '+m(`${a+b} − ${a} = ${b}`)+' است؛ بنابراین رابطهٔ الگو '+m(`${a}n + ${b}`)+' و معادلهٔ ما '+m(`${a}n + ${b} = ${a*(b+3)+b}`)+' می‌شود.','از هر دو طرف '+fa(b)+' کم می‌کنیم: '+m(`${a}n = ${a*(b+3)+b} − ${b} = ${a*(b+3)}`)+'؛ سپس هر دو طرف را بر '+fa(a)+' تقسیم می‌کنیم: '+m(`n = ${a*(b+3)} / ${a} = ${b+3}`)+'. بررسی: '+m(`${a} × ${b+3} + ${b} = ${a*(b+3)+b}`)+'. پاسخ، شمارهٔ جمله است، نه مقدار آن.'];break;
+ default: throw new Error('Missing worked solution for template '+type);
+ }
+ if(type>=28&&type<=36)rule='مقدار معلوم را به‌جای حرف بگذار؛ ابتدا پرانتز، سپس ضرب و تقسیم و در پایان جمع و تفریق را انجام بده.';
+ if(type>=37&&type<=44&&type!==42)rule='برای حفظ برابری، هر عمل را روی هر دو طرف معادله انجام می‌دهیم تا مجهول تنها بماند.';
+ return '<strong>راه‌حل مرحله‌به‌مرحله</strong><ol class="solution-steps"><li>'+[rule,...steps].join('</li><li>')+'</li></ol><p class="solution-answer">جواب نهایی: '+m(answer)+'</p>';
+}
+// Hints are deliberately parameter-free: no substituted expression, solved equation or final answer.
+const learningHints=[
+ 'به رابطهٔ تعداد روزها با مقدار مطالعهٔ هر روز فکر کن؛ کدام کمیت تکرار می‌شود؟',
+ 'مدادهای داخل بسته‌ها و مدادهای جدا را دو بخش مستقل در نظر بگیر.',
+ 'عبارت را از بخش «برابرِ عدد» شروع کن و بعد به «بیشتر از» توجه کن.',
+ 'اول مشخص کن چه مقداری مبناست و چه مقداری باید از آن کم شود.',
+ 'ورودی و تغییری را که ماشین روی آن انجام می‌دهد، جدا مشخص کن.',
+ 'به تفاوت «چند برابر شدن» با «چند واحد اضافه شدن» فکر کن.',
+ 'یک تقسیم مساوی رسم کن؛ کل مهره‌ها و تعداد گروه‌ها کدام‌اند؟',
+ 'شمارهٔ هر جمله را با مقدار آن مقایسه کن؛ چه رابطه‌ای تکرار می‌شود؟',
+ 'محیط یعنی طول دور شکل؛ ببین چند ضلع هم‌اندازه باید شمرده شود.',
+ 'قیمت یک دفتر و تعداد دفترها چه نقشی در هزینهٔ کل دارند؟',
+ 'آیا با گرفتن امتیاز تازه، امتیاز قبلی کم می‌شود یا زیاد؟',
+ 'تعداد اولیه و تعداد داده‌شده را مشخص کن؛ سؤال چه چیزی را می‌خواهد؟',
+ 'دو مرحلهٔ ماشین را به همان ترتیب گفته‌شده دنبال کن.',
+ 'خروجی مرحلهٔ اول، ورودی مرحلهٔ دوم است؛ آیا به پرانتز نیاز داری؟',
+ 'دقت کن تقسیم روی کل خروجی مرحلهٔ قبل انجام می‌شود یا فقط بخشی از آن.',
+ 'کدام هزینه با تعداد کتاب‌ها تغییر می‌کند و کدام هزینه فقط یک بار پرداخت می‌شود؟',
+ 'اختلاف جمله‌های پیاپی را بررسی کن؛ رابطهٔ پیشنهادی‌ات باید جملهٔ اول را هم بسازد.',
+ 'دور مستطیل را دنبال کن و به ضلع‌های روبه‌رو توجه کن.',
+ 'برای مساحت، به تعداد مربع‌های واحد در ردیف‌ها و ستون‌ها فکر کن.',
+ 'ابتدا طول کامل یک ضلع را مشخص کن؛ آن را با یک بخش از ضلع اشتباه نگیر.',
+ 'شکل اول را جدا بشمار؛ در شکل بعدی کدام ضلع از قبل وجود دارد؟',
+ 'اول یک ردیف را بررسی کن؛ آیا صندلی‌ها از یک ردیف برداشته شده‌اند یا از همهٔ ردیف‌ها؟',
+ 'صورت‌ها و مخرج‌ها را جدا بررسی کن؛ کدام ثابت است و کدام با شماره تغییر می‌کند؟',
+ 'پس‌انداز تکرارشونده را از خرجی که فقط یک بار رخ می‌دهد جدا کن.',
+ 'دو شکل پیاپی را مقایسه کن؛ ضلع مشترک را دوباره نشمار. چند چوب تازه لازم می‌شود؟',
+ 'در گذر از یک شکل به شکل بعد، چوب‌های قبلی را از چوب‌های تازه جدا کن.',
+ 'آیا مربع‌ها ضلع مشترک دارند؟ سهم هر مربع را مستقل بررسی کن.',
+ 'نقطه‌های هر ردیف و نقطهٔ ثابت را جدا بشمار؛ چه چیزی با شمارهٔ شکل تغییر می‌کند؟',
+ 'عدد معلوم را به‌جای حرف بگذار؛ عددِ کنار حرف نشانهٔ چه عملی است؟',
+ 'پس از جای‌گذاری، به علامت عمل توجه کن؛ کنار هم نوشتن عددها کافی نیست.',
+ 'در رابطهٔ محیط مربع، مشخص کن کدام نماد طول ضلع را نشان می‌دهد.',
+ 'عدد منفی را هنگام جای‌گذاری داخل پرانتز بنویس و ترتیب عملیات را رعایت کن.',
+ 'پس از جای‌گذاری، کدام قسمت باید پیش از ضرب حساب شود؟',
+ 'به علامت حاصل ضرب دو عدد منفی فکر کن؛ تفریق را بعد از ضرب انجام بده.',
+ 'پرانتز و ضرب‌ها را جدا بررسی کن؛ کم کردن یک مقدار منفی چه اثری دارد؟',
+ 'مقدار هر حرف را جدا جای‌گذاری کن؛ به علامت منفیِ پیش از مقدار منفی دقت کن.',
+ 'ابتدا صورت کسر را کامل حساب کن؛ بعد سراغ تقسیم برو.',
+ 'چه عملی می‌تواند عددِ اضافه‌شده به مجهول را خنثی کند؟ همان عمل را در دو طرف انجام بده.',
+ 'برای تنها کردن مجهولی که در عددی ضرب شده، از عمل معکوس استفاده کن.',
+ 'کدام عمل، کم شدن عدد از مجهول را خنثی می‌کند؟ برابری دو طرف را حفظ کن.',
+ 'اول جملهٔ عددی را از کنار جملهٔ مجهول کنار بزن؛ سپس ضریب مجهول را بررسی کن.',
+ 'برای تنها کردن مجهول، عملیات را از آخر به اول خنثی کن و هر بار دو طرف را یکسان تغییر بده.',
+ 'قیمت یک دفتر را مجهول بگیر؛ هزینهٔ ارسال را از هزینهٔ دفترها جدا کن.',
+ 'پرانتز را باز کن، سپس جمله‌های دارای مجهول و عددهای ثابت را جدا جمع کن.',
+ 'چه عددی می‌تواند مخرج‌های هر دو طرف را حذف کند؟ ضرب باید روی تمام هر طرف انجام شود.',
+ 'کوچک‌ترین عدد را مجهول بگیر؛ دو عدد بعدی چه رابطه‌ای با آن دارند؟',
+ 'آیا قسمت حرفی جمله‌ها یکسان است؟ در جمع جمله‌های مشابه چه چیزی تغییر می‌کند؟',
+ 'جمله‌های دارای حرف و جمله‌های ثابت را جدا دسته‌بندی کن؛ علامت‌ها را همراهشان نگه دار.',
+ 'ضرب بیرون پرانتز باید به کدام جمله‌ها برسد؟ بعد جمله‌های مشابه را پیدا کن.',
+ 'اختلاف دو جملهٔ پیاپی را پیدا کن و بررسی کن که در بقیهٔ الگو هم تکرار شود.',
+ 'اول رابطهٔ شمارهٔ جمله با مقدارش را پیدا کن؛ شماره و مقدار جمله یک چیز نیستند.',
+ 'این بار مقدار جمله داده شده و شماره‌اش مجهول است؛ رابطهٔ الگو را به یک معادله تبدیل کن.'
+];
+function learningHint(type){if(!learningHints[type])throw new Error('Missing hint '+type);return learningHints[type];}
+function makeQuestion(level,assignedSubject=null){
+ const subjects=cfg?.subjects||Object.keys(subjectNames),subjectKey=level+':'+subjects.join(',');
+ let subject=assignedSubject;
+ if(!subject){let subjectsBag=subjectBags.get(subjectKey);if(!subjectsBag?.length){subjectsBag=shuffle(subjects.slice());subjectBags.set(subjectKey,subjectsBag);}subject=subjectsBag.pop();}
+ const allowed=templateLevels[level].filter(i=>templateSubjects[i]===subject),bagKey=level+':'+subject;
+ let bag=questionBags.get(bagKey);if(!bag?.length){bag=shuffle(allowed.slice());questionBags.set(bagKey,bag);}const preferred=bag.pop();
+ // Rotate topics and templates. Expand parameter space only after ordinary variants run out.
+ for(let expansion=0;expansion<100;expansion++)for(const type of [preferred,...shuffle(allowed.filter(i=>i!==preferred))])for(let attempt=0;attempt<200;attempt++){
+  const a=type>=24&&type<28?rand(5,30+expansion*20):rand(type===8||type===20?3:2,(level===1?7:9)+expansion*5);let b=rand(2,(type>=49?40:level===1?12:20)+expansion*40);if(b===a)b++;
+  const v=pick(['n','x','a','t']);const [subtopic,prompt,answer,wrong,hint,visual='']=algebraTemplates[type](a,b,v);
+  // Compare the displayed question, not its answer or shuffled choices.
+  // Keep abandoned questions in gameQuestions so returning never repeats them.
+  const key=prompt+'|'+visual;if(recentQuestions.has(key)||gameQuestions.has(key))continue;
+  recentQuestions.add(key);if(recentQuestions.size>120)recentQuestions.delete(recentQuestions.values().next().value);gameQuestions.add(key);
+  const safeHint=learningHint(type);
+  const q=choiceQ(prompt,answer,wrong,detailedExplanation(type,a,b,v,answer,safeHint),subjectNames[subject],safeHint,visual);
+  q.template=type;q.level=level;q.subject=subject;q.subtopic=subtopic;q.parameters={a,b,v};return q;
+ }
+ throw new Error('Question bank exhausted');
+}
+function questionReview(q){
+ const options=!q.numeric&&q.options?.length?'<strong>گزینه‌ها</strong><ol class="review-options" aria-label="گزینه‌های سؤال">'+q.options.map((option,i)=>'<li><span class="review-option-label">گزینهٔ '+fa(i+1)+'</span>'+math(option)+'</li>').join('')+'</ol>':'';
+ return '<section class="review-question"><h3 class="question-topic">مبحث: '+subjectNames[q.subject]+'</h3><p class="subtitle">سطح سؤال: '+levelNames[q.level]+' · '+q.subtopic+'</p><strong>صورت سؤال</strong><div class="question">'+q.prompt+'</div>'+(q.visual?'<div class="q-visual">'+q.visual+'</div>':'')+options+'</section>'+q.explain;
+}
+function openQuestion(i){if(!state||state.over||state.locked||state.board[i]!==null||(cfg.mode==='ai'&&state.turn===1))return;clearAnswerEffect();state.locked=true;currentCell=i;question=state.pending[i]||(state.pending[i]=makeQuestion(tier(i),state.cellSubjects[i]));question.resolved=false;question.openedAt=performance.now();question.spent??=0;question.hintUsed??=false;question.remaining??=cfg.seconds*1000;render();$('questionTitle').textContent='مبحث: '+subjectNames[question.subject];$('questionMeta').textContent='سطح سؤال: '+levelNames[tier(i)]+' · '+question.subtopic;$('questionOwner').textContent=cfg.names[state.turn]+' · مهرهٔ '+mark(state.turn)+' · ردیف '+fa(Math.floor(i/5)+1)+'، ستون '+fa(i%5+1);$('questionText').innerHTML=question.prompt;$('questionVisual').hidden=!question.visual;$('questionVisual').innerHTML=question.visual||'';$('feedback').hidden=true;$('hintText').hidden=true;$('hintRow').hidden=false;$('hintBtn').disabled=false;$('hintBtn').textContent='✦ راهنما';$('hintCount').textContent='ذخیرهٔ تو: '+fa(state.players[state.turn].hints)+' راهنما';$('hintBtn').disabled=state.players[state.turn].hints===0;$('options').replaceChildren();$('options').hidden=question.numeric;$('numberForm').hidden=!question.numeric;$('numberError').textContent='';$('numberAnswer').value='';$('numberAnswer').disabled=false;$('answerBtn').disabled=false;
+if(!question.numeric)question.options.forEach(o=>{const b=document.createElement('button');b.type='button';b.className='option';b.innerHTML=math(o);b.dataset.value=o;b.onclick=()=>resolveAnswer(o,b);$('options').append(b);});$('timerBar').hidden=!cfg.seconds;$('timerLabel').textContent=cfg.seconds?fa(Math.ceil(question.remaining/1000))+' ثانیه':'بدون تایمر';$('timerFill').style.width=(cfg.seconds?question.remaining/(cfg.seconds*1000)*100:100)+'%';$('backQuestionBtn').hidden=false;if(question.hintUsed){$('hintBtn').disabled=true;$('hintBtn').textContent='✦ استفاده شد';$('hintText').innerHTML=question.hint;$('hintText').hidden=false;[...$('options').children].filter(b=>(question.eliminated||[]).includes(b.dataset.value)).forEach(b=>{b.disabled=true;b.classList.add('eliminated');});}$('questionDialog').showModal();if(question.numeric)$('numberAnswer').focus();else $('options').firstElementChild.focus();clearInterval(timer);if(cfg.seconds){question.lastTick=performance.now();timer=setInterval(()=>{tickQuestion();},150);}}
+function tickQuestion(force=false){if(!question||question.resolved||!cfg.seconds)return;const now=performance.now(),delta=now-(question.lastTick??now);question.lastTick=now;if(document.hidden&&!force)return;question.remaining=Math.max(0,question.remaining-delta);$('timerLabel').textContent=fa(Math.ceil(question.remaining/1000))+' ثانیه';$('timerFill').style.width=question.remaining/(cfg.seconds*1000)*100+'%';if(question.remaining<=0)resolveAnswer(null,null,true);}
+document.addEventListener('visibilitychange',()=>{if(!question||question.resolved||!cfg.seconds)return;if(document.hidden)tickQuestion(true);else question.lastTick=performance.now();});
+function normalizeNumber(v){return v.trim().replace(/[۰-۹]/g,d=>'۰۱۲۳۴۵۶۷۸۹'.indexOf(d)).replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/٫/g,'.').replace(/[−–]/g,'-');}
+$('numberForm').onsubmit=e=>{e.preventDefault();if(!question||question.resolved)return;const v=normalizeNumber($('numberAnswer').value);if(!/^[+-]?(?:\d+(?:\.\d*)?|\.\d+)$/.test(v)){$('numberError').textContent='یک عدد معتبر بنویس؛ مثل ۱۲ یا ‎-۳.';return;}$('numberError').textContent='';resolveAnswer(String(Number(v)));};
+$('hintBtn').onclick=()=>{if(!question||question.resolved||question.hintUsed||state.players[state.turn].hints<=0)return;state.players[state.turn].hints--;state.players[state.turn].hintsUsed++;question.hintUsed=true;$('hintBtn').disabled=true;$('hintBtn').textContent='✦ استفاده شد';$('hintCount').textContent='ذخیرهٔ تو: '+fa(state.players[state.turn].hints)+' راهنما';if(!question.numeric){question.eliminated=shuffle([...$('options').children].filter(b=>b.dataset.value!==question.answer)).slice(0,2).map(b=>{b.disabled=true;b.classList.add('eliminated');return b.dataset.value;});}$('hintText').innerHTML=question.hint;$('hintText').hidden=false;render();};
+function record(p,q,ok){let s=state.players[p];if(!s.topics[q.topic])s.topics[q.topic]={ok:0,total:0};s.topics[q.topic].total++;if(ok){s.correct++;s.streak++;s.bestStreak=Math.max(s.bestStreak,s.streak);if(s.wrong>0&&s.streak>=3)s.comeback=true;s.topics[q.topic].ok++;if(s.streak%3===0)s.hints=Math.min(2,s.hints+1);}else{s.wrong++;s.streak=0;}}
+function resolveAnswer(answer,button=null,timeout=false){if(!question||question.resolved)return;if(!timeout){tickQuestion();if(question.resolved)return;}question.resolved=true;clearInterval(timer);const ok=answer===question.answer;question.ok=ok;sound(ok?'correct':'wrong');$('backQuestionBtn').hidden=true;record(state.turn,question,ok);speakBot(ok?'good':'retry');question.spent+=performance.now()-question.openedAt;if(timeout)state.players[state.turn].timeouts++;logAnswer(state.turn,currentCell,question,answer,ok,timeout);if(ok){state.board[currentCell]=state.turn;state.last=currentCell;state.misses=0;}else state.misses++;[...$('options').children].forEach(b=>{b.disabled=true;if(b.dataset.value===question.answer)b.classList.add('correct');});if(button&&!ok)button.classList.add('incorrect');$('numberAnswer').disabled=true;$('answerBtn').disabled=true;$('hintRow').hidden=true;$('feedback').hidden=false;$('feedback').className='feedback '+(ok?'good':'bad');$('feedbackTitle').textContent=ok?'درست بود؛ این خانه مال توست!':timeout?'زمان تمام شد؛ این‌بار یاد می‌گیریم.':'این‌بار درست نشد؛ راه‌حل را ببین.';$('feedbackText').innerHTML=questionReview(question)+(ok&&state.players[state.turn].streak%3===0?'<br><strong>✦ سه پاسخ درست پیاپی! یک راهنما گرفتی (سقف ذخیره: ۲).</strong>':'');$('status').textContent=cfg.names[state.turn]+(ok?' یک خانه را تصاحب کرد.':' پاسخ درست نداد؛ خانه خالی ماند.');render();$('questionDialog').close();showAnswerEffect(currentCell,ok);$('nextBtn').focus({preventScroll:true});$('board').scrollIntoView({block:'nearest',behavior:'instant'});}
+function backQuestion(){if(!question||question.resolved)return;tickQuestion();if(question.resolved)return;clearInterval(timer);const cell=currentCell;state.pending[cell]=null;question=null;currentCell=null;state.locked=false;$('questionDialog').close();render();$('status').textContent='خانه‌ای را انتخاب کن؛ حتی در همین خانه، سؤال تازه از همان مبحث با زمان کاملِ انتخاب‌شده نمایش داده می‌شود.';$('board').children[cell].focus({preventScroll:true});}
+$('backQuestionBtn').onclick=backQuestion;
+$('questionDialog').addEventListener('cancel',e=>{e.preventDefault();if(question&&question.resolved)advanceQuestion();else backQuestion();});
+function advanceQuestion(){if(state?.botReview){if(performance.now()<state.botReview.readyAt)return;clearTimeout(botReviewTimer);state.botReview=null;clearAnswerEffect();$('feedback').hidden=true;$('nextBtn').disabled=false;$('nextBtn').textContent='ادامهٔ بازی ←';completeTurn();return;}if(!question||!question.resolved)return;clearAnswerEffect();$('feedback').hidden=true;$('questionDialog').close();state.pending[currentCell]=question.ok?null:makeQuestion(tier(currentCell),state.cellSubjects[currentCell]);question=null;currentCell=null;completeTurn();}
+$('nextBtn').onclick=advanceQuestion;
+function completeTurn(){const line=win(state.board,state.turn);if(line){state.winLine=line;finish(state.turn);return;}if(state.board.every(x=>x!==null)||state.misses>=8){finish(null);return;}state.turn=1-state.turn;state.round++;state.locked=false;render();if(cfg.mode==='ai'&&state.turn===1)scheduleBot();else{const b=[...$('board').children].find(b=>!b.disabled);if(b)b.focus({preventScroll:true});}}
+function potential(board,p){let score=0;for(let r=0;r<5;r++)for(let c=0;c<5;c++)for(const[dr,dc]of[[0,1],[1,0],[1,1],[1,-1]]){let cells=[];for(let k=0;k<4;k++){let y=r+k*dr,x=c+k*dc;if(y<0||y>4||x<0||x>4)break;cells.push(board[y*5+x]);}if(cells.length===4&&!cells.includes(1-p)){const n=cells.filter(x=>x===p).length;score+=[0,1,7,55,10000][n];}}return score;}
+function chooseBot(board,difficulty){const empty=board.map((v,i)=>v===null?i:-1).filter(i=>i>=0);if(difficulty==='easy'&&Math.random()<.65)return pick(empty);for(const p of[1,0])for(const i of empty){let b=board.slice();b[i]=p;if(win(b,p))return i;}let best=-Infinity,moves=[];for(const i of empty){let b=board.slice();b[i]=1;let score=potential(b,1)-.9*potential(b,0)+(4-Math.abs(2-Math.floor(i/5))-Math.abs(2-i%5))*.25;if(difficulty==='hard'){let threat=0;for(const j of empty){if(j===i)continue;let next=b.slice();next[j]=0;threat=Math.max(threat,potential(next,0));}score-=threat*.7;}if(score>best){best=score;moves=[i];}else if(score===best)moves.push(i);}return pick(moves);}
+function scheduleBot(){state.locked=true;render();$('status').textContent='جبرینو در حال بررسی مسیرهای برد و حل چالش است…';clearTimeout(botTimeout);botTimeout=setTimeout(botMove,1250);}
+function botMove(){
+ clearTimeout(botTimeout);
+ if(!state||state.over||state.botReview||cfg.mode!=='ai'||state.turn!==1)return;
+ if(document.hidden||$('helpDialog').open||$('leaveDialog').open){botTimeout=setTimeout(botMove,400);return;}
+ const i=chooseBot(state.board,cfg.botDifficulty),q=state.pending[i]||makeQuestion(tier(i),state.cellSubjects[i]);
+ record(1,q,true);logAnswer(1,i,q,q.answer,true,false,true);state.pending[i]=null;
+ state.board[i]=1;state.last=i;state.misses=0;state.locked=true;
+ const finalMove=!!win(state.board,1)||state.board.every(x=>x!==null);
+ state.botReview={cell:i,readyAt:performance.now()+(finalMove?4000:0)};
+ $('status').textContent='ربات خانهٔ ردیف '+fa(Math.floor(i/5)+1)+'، ستون '+fa(i%5+1)+' را گرفت. سؤال و پاسخ را بخوان و سپس ادامه بده.';
+ const work='<p class="subtitle">سؤال و پاسخ ربات</p>'+questionReview(q);
+ $('botDetails').hidden=false;$('botWork').innerHTML=work;
+ $('feedback').className='feedback good bot-review';$('feedbackTitle').textContent='🤖 حرکت ربات · سطح سؤال: '+levelNames[tier(i)];
+ $('feedbackText').innerHTML=work;$('feedback').hidden=false;
+ $('nextBtn').disabled=finalMove;$('nextBtn').textContent=finalMove?'نمایش حرکت پایانی… (۴ ثانیه)':'دیدم؛ ادامهٔ بازی ←';
+ render();showAnswerEffect(i,true,'🤖 ربات حرکت کرد؛ سؤال و پاسخ آن را زیر صفحه ببین.');
+ $('board').scrollIntoView({block:'nearest',behavior:'instant'});
+ if(finalMove)botReviewTimer=setTimeout(()=>{if(!state?.botReview)return;$('nextBtn').disabled=false;$('nextBtn').textContent='دیدم؛ نمایش نتیجهٔ بازی ←';},4000);
+ else $('nextBtn').focus({preventScroll:true});
+}
+function plainMath(html){const box=document.createElement('div');box.innerHTML=html;box.querySelectorAll('.frac').forEach(f=>f.replaceWith('('+f.querySelector('.num').textContent+' بر '+f.querySelector('.den').textContent+')'));return box.textContent.trim();}
+function logAnswer(player,cell,q,answer,ok,timeout,bot=false){state.history.push({player,cell,subject:q.subject,level:q.level,template:q.template,topic:q.topic,prompt:plainMath(q.prompt),answer:timeout?'زمان تمام شد':plainMath(math(answer)),correct:plainMath(math(q.answer)),explain:plainMath(q.explain),ok,timeout,hint:!!q.hintUsed,seconds:bot?null:Math.round((q.spent||0)/1000),bot});}
+function buildReport(){
+ const duration=Math.max(0,Math.round((state.endedAt-state.startedAt)/1000));
+ const lines=['🌸 گزارش بازی میدان دوز عملیات جبری 🌸','👨‍💻 طراح: محمد رضازاده مقدم','━━━━━━━━━━━━━━━━━━','📅 زمان شروع: '+new Date(state.startedAt).toLocaleString('fa-IR'),'⏱ مدت حضور در بازی: '+fa(Math.floor(duration/60))+' دقیقه و '+fa(duration%60)+' ثانیه','🎮 حالت: '+(cfg.mode==='ai'?'بازی با ربات هوشمند':'بازی دونفره'),'📚 سطح: '+({easy:'تمرینی',medium:'متوسط',mixed:'ترکیبی',hard:'چالشی'}[cfg.difficulty]),'⌛ زمان هر پاسخ: '+(cfg.seconds?fa(cfg.seconds)+' ثانیه':'بدون محدودیت'),'🏁 نتیجه: '+$('resultTitle').textContent,$('resultMessage').textContent,'🧩 خانه‌های گرفته‌شده: '+fa(state.board.filter(x=>x!==null).length)+' از ۲۵'];
+ if(cfg.mode==='ai')lines.push('🤖 قدرت جبرینو: '+botLevelNames[cfg.botDifficulty]);
+ lines.push('📖 مباحث انتخاب‌شده: '+cfg.subjects.map(s=>subjectNames[s]).join('، '));
+ for(let p=0;p<2;p++){
+  const s=state.players[p],total=s.correct+s.wrong,bot=cfg.mode==='ai'&&p===1;
+  lines.push('','━━━━━━━━━━━━━━━━━━',(bot?'🤖 ':'👤 ')+cfg.names[p]+(bot?'':' | کلاس '+fa(cfg.classes[p])),'🔷 مهره: '+cfg.marks[p]+' | خانه‌های گرفته‌شده: '+fa(state.board.filter(x=>x===p).length),'✅ درست: '+fa(s.correct)+' | ❌ نادرست: '+fa(s.wrong)+' | مجموع پاسخ‌ها: '+fa(total),'🎯 دقت: '+(total?fa(Math.round(100*s.correct/total))+'٪':'هنوز پاسخی ثبت نشده'));
+  if(bot){lines.push('پاسخ‌های ربات جدا از عملکرد دانش‌آموز ثبت شده‌اند.');continue;}
+  const badges=earnedBadges(s,true);lines.push('🏅 نشان‌های این دست: '+(badges.length?badges.map(b=>b.name).join('، '):'هنوز نشانی کسب نشده است.'));
+  const attempts=state.history.filter(h=>h.player===p),avg=attempts.length?fa(Math.round(attempts.reduce((a,h)=>a+h.seconds,0)/attempts.length))+' ثانیه':'—';
+  lines.push('💡 راهنماهای استفاده‌شده: '+fa(s.hintsUsed)+' | ⌛ پایان زمان: '+fa(s.timeouts),'🔥 بهترین زنجیرهٔ پاسخ درست: '+fa(s.bestStreak),'⏱ میانگین زمان پاسخ: '+avg,'📊 عملکرد موضوعی:');
+  const topics=cfg.subjects.map(key=>[subjectNames[key],s.topics[subjectNames[key]]||{ok:0,total:0}]);for(const [name,v] of topics)lines.push('• '+name+': '+(v.total?fa(v.ok)+' پاسخ درست از '+fa(v.total)+' ('+fa(Math.round(v.ok/v.total*100))+'٪)':'هنوز سؤالی پاسخ داده نشده است.'));
+  const practice=topics.filter(([,v])=>v.ok<v.total).sort((a,b)=>a[1].ok/a[1].total-b[1].ok/b[1].total).map(([name])=>name);
+  lines.push('🌱 پیشنهاد: '+(practice.length?'مرور راه‌حل‌ها و تمرین بیشتر در «'+practice.join('، ')+'».':total?'عالی بود! برای تثبیت یادگیری، سؤال‌های متنوع‌تر را هم امتحان کن.':'در بازی بعد چند سؤال را با حوصله حل کن تا عملکردت مشخص شود.'));
+ }
+ lines.push('','🌷 برد و باخت می‌گذرد؛ یادگیری برایت می‌ماند!','','💡 با باشگاه ریاضی، عملیات جبری تو جیبته!','🆔 @MathClub789');
+ return lines.join('\n');
+}
+function showResult(){$('celebrationDialog').close();if(state&&state.over&&!$('resultDialog').open)$('resultDialog').showModal();}
+function celebrate(winner){
+ const lost=cfg.mode==='ai'&&winner===1,tie=winner===null;
+ $('celebrationDialog').classList.toggle('encourage',lost||tie);
+ $('celebrationFlowers').textContent=lost?'🌱 💙 🌟 💪 🌈':'🌸 🌷 🌼 🌺 🌸';
+ $('celebrationFooter').textContent=lost?'✨ 📚 🦋 📚 ✨':'🎊 💐 🏆 💐 🎊';
+ $('celebrationTitle').textContent=lost?'این بار نشد، ولی تو هنوز کلی فرصت داری! 💙':tie?'چه رقابت نزدیکی! آفرین به تلاشتون 🌷':cfg.names[winner]+'، گل کاشتی! 🎉';
+ $('celebrationMessage').textContent=lost?cfg.names[0]+'، باختن پایان راه نیست. راه‌حل‌ها رو مرور کن؛ دست بعد یه فرصت تازه برای درخشیدنه! 🌱':tie?'برد اصلی، چیزهاییه که یاد گرفتید. یه نفس تازه کنید و قوی‌تر برگردید! ✨':cfg.mode==='friend'?'آفرین '+cfg.names[winner]+'! 🌸 '+cfg.names[1-winner]+'، تو هم خسته نباشی؛ با تمرین و یه نقشهٔ تازه، دست بعد می‌تونه مال تو باشه! 💪':'چهار مهره، کلی فکر و یه برد قشنگ! به تلاش و تمرکزت افتخار کن 🌸';
+ $('celebrationDecor').replaceChildren();if(!matchMedia('(prefers-reduced-motion: reduce)').matches)for(let i=0;i<18;i++){const petal=document.createElement('span');petal.textContent=(lost?['⭐','💙','🌱']:['🌸','🌷','🌼','✨'])[i% (lost?3:4)];petal.style.left=(i*37%100)+'%';petal.style.animationDelay=(-i*.21)+'s';$('celebrationDecor').append(petal);}
+ $('celebrationDialog').showModal();
+}
+$('skipCelebration').onclick=showResult;$('celebrationDialog').addEventListener('cancel',e=>e.preventDefault());$('openReportBtn').onclick=showResult;
+$('copyReportBtn').onclick=async()=>{const text=$('reportText').value;try{if(!navigator.clipboard)throw Error('clipboard unavailable');await navigator.clipboard.writeText(text);$('reportNotice').textContent='گزارش کپی شد ✅ حالا در پیام‌رسان دلخواه بچسبان.';}catch(e){$('reportText').closest('details').open=true;$('reportText').focus();$('reportText').select();let copied=false;try{copied=document.execCommand('copy');}catch(e){}$('reportNotice').textContent=copied?'گزارش کپی شد ✅':'کپی خودکار در این مرورگر در دسترس نیست؛ متن انتخاب‌شده را دستی کپی کن.';}};
+function finish(winner,abandoned=false){if(state.over)return;clearTimeout(botReviewTimer);state.botReview=null;state.over=true;speakBot(abandoned?'ended':winner===0?'studentWin':winner===1?'botWin':'tie');state.endedAt=Date.now();state.locked=false;clearInterval(timer);clearAnswerEffect();$('feedback').hidden=true;question=null;currentCell=null;$('questionDialog').close();clearTimeout(botTimeout);render();$('resultIcon').textContent=winner===null?'◇':'✦';$('resultTitle').textContent=winner===null?'این نبرد مساوی شد!':cfg.names[winner]+' برنده شد!';$('resultMessage').textContent=winner===null?(state.misses>=8?'هشت نوبت پیاپی خانه‌ای تصاحب نشد؛ وقت یک شروع تازه است.':'صفحه پر شد، اما هیچ‌کس چهار مهرهٔ متوالی نچید.'):'چهار مهرهٔ متوالی؛ ترکیبی از ریاضی و استراتژی!';if(abandoned){$('resultTitle').textContent='بازی زودتر پایان یافت';$('resultMessage').textContent='گزارش عملکرد تا لحظهٔ پایان بازی؛ این نتیجه برد یا باخت محسوب نمی‌شود.';}$('status').textContent=$('resultTitle').textContent;$('resultStats').replaceChildren();for(let p=0;p<2;p++){if(cfg.mode==='ai'&&p===1)continue;const s=state.players[p],total=s.correct+s.wrong;const box=document.createElement('div');box.className='result-card'+(p===1?' o':'');let title=document.createElement('strong');title.textContent=cfg.names[p]+' · کلاس '+fa(cfg.classes[p]);box.append(title);let text=document.createElement('div');text.textContent=fa(s.correct)+' پاسخ درست · '+fa(s.wrong)+' خطا · دقت '+(total?fa(Math.round(s.correct/total*100))+'٪':'—');box.append(text);let topics=Object.entries(s.topics).filter(([,v])=>v.ok<v.total).sort((a,b)=>(a[1].ok/a[1].total)-(b[1].ok/b[1].total));let note=document.createElement('div');note.className='source-note';note.textContent=topics.length?'پیشنهاد تمرین بیشتر: '+topics.slice(0,2).map(([name])=>name).join('، '):total?'آفرین! پاسخ‌های این دست را بدون خطا حل کردی.':'در این دست هنوز پاسخی ثبت نشده است.';box.append(note);box.append(journeyCard(p,true));$('resultStats').append(box);}$('reportText').value=buildReport();$('reportNotice').textContent='پیش از ارسال، مشخصات و متن گزارش را بررسی کن.';$('openReportBtn').hidden=false;if(abandoned)showResult();else celebrate(winner);}
+$('rematchBtn').onclick=()=>{$('resultDialog').close();startGame();};$('viewBoardBtn').onclick=()=>$('resultDialog').close();$('newPlayersBtn').onclick=()=>{$('resultDialog').close();goSetup();};
+$('leaveBtn').onclick=()=>{if(state&&state.over)goSetup();else $('leaveDialog').showModal();};$('cancelLeave').onclick=()=>$('leaveDialog').close();$('confirmLeave').onclick=()=>{$('leaveDialog').close();finish(null,true);};
+function goSetup(){clearTimeout(botReviewTimer);$('celebrationDialog').close();clearAnswerEffect();$('feedback').hidden=true;cfg=null;clearTimeout(botTimeout);clearInterval(timer);state=null;question=null;$('gameView').hidden=true;$('setupView').hidden=false;window.scrollTo({top:0,behavior:'instant'});$('studentName').focus({preventScroll:true});}
+</script>
+</body>
+</html>
